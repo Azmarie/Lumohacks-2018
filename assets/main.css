@@ -154,10 +154,14 @@ ANIOMATION
 BANNER
 ---------------------------------*/
 .banner{
-  background-image: url('http://lumohacks.com/wp-content/uploads/2017/09/Lumohacks_2017_selfie2-1024x576.jpg');
-  background-color:#000;
+  background-color: #fff;
+  background-image: url('./img/lumohacks_logo_white.png');
+  background-repeat: no-repeat;
+  background-size: auto;
+  /* background-image: url('http://lumohacks.com/wp-content/uploads/2017/09/Lumohacks_2017_selfie2-1024x576.jpg'); */
+  /* background-color:#000; */
   background-position: center;
-  background-size: cover;
+  /* background-size: cover; */
   background-attachment: fixed;
   display: table;
   width: 100%;
@@ -173,8 +177,9 @@ BANNER
   display: table;
   height: 100%;
   text-align:center;
-  background-color: rgba(0,0,0,0.4);
-  animation: banner-in 2s ;
+  /* background-color: rgba(0,0,0,0.4); */
+  /* background-color: rgba(255,255,255,0.2); */
+  animation: banner-in 1s ;
 }
 
 .banner__container {
@@ -188,25 +193,26 @@ BANNER
   left: 50%;
   margin-left: -12px;
   cursor: pointer;
-  animation: opacity 3s;
+  animation: opacity 2s;
 }
 
 .banner__title {
+  text-transform: uppercase;
   font-size: 72px;
   color: #fff;
   margin-top: 0;
   margin-bottom: 20px;
   letter-spacing: 1px;
   font-weight: 800;
-  animation: opacity 3s;
+  animation: opacity 2s;
 }
 
 .banner__text {
-  font-size: 14px;
+  /* font-size: 14px; */
   color: #fff;
   margin: 0;
   margin-bottom: 18px;
-  animation: opacity 3s;
+  animation: opacity 2s;
 }
 
 /*--------------------------------
