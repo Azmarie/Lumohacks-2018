@@ -157,9 +157,8 @@ BANNER
   background-color: #fff;
   background-image: url('./img/lumohacks_logo_white.png');
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: 750px;
   /* background-image: url('http://lumohacks.com/wp-content/uploads/2017/09/Lumohacks_2017_selfie2-1024x576.jpg'); */
-  /* background-color:#000; */
   background-position: center;
   /* background-size: cover; */
   background-attachment: fixed;
@@ -209,8 +208,8 @@ BANNER
 
 .banner__text {
   /* font-size: 14px; */
-  color: #fff;
-  margin: 0;
+  color: #333;
+  margin-top: 460px;
   margin-bottom: 18px;
   animation: opacity 2s;
 }
