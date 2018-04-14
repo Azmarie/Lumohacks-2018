@@ -211,7 +211,7 @@ header.active {
 
 header.sticky {
   position: fixed;
-  z-index: 999
+  /* z-index: 999 */
 }
 
 #mobile-menu-open, #mobile-menu-close {
