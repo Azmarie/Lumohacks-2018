@@ -222,7 +222,7 @@ header.sticky {
 BANNER
 ---------------------------------*/
 .banner{
-  background-color: #fff;
+  /* background-color: #fff; */
   background-image: url('../img/lumohacks_logo_white.png');
   background-repeat: no-repeat;
   background-size: 900px;
