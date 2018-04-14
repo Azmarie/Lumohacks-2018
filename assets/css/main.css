@@ -560,7 +560,8 @@ FOOTER
 
 .footer__desc {
   color: #d7d7d7;
-  width:300px;
+  font-size: 13px;
+  /* width:300px; */
   /* margin-bottom: 25px; */
 }
 
