@@ -247,10 +247,10 @@ BANNER
   animation: banner-in 1s ;
 }
 
-.banner__container {
+/* .banner__container {
   display: table-cell;
   vertical-align: middle;
-}
+} */
 
 .banner__scroll-down {
   position: absolute;
