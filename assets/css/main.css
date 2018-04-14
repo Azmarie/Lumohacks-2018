@@ -806,7 +806,7 @@ RESPONSIVE
   }
 
   .social a {
-    margin-left: 12px;
+    margin-left: 0;
   }
 
 }
@@ -855,7 +855,7 @@ RESPONSIVE
   }
   .footer__desc {
     font-size: 11px;
-    width: 180px;
+    /* width: 180px; */
   }
 
 }
