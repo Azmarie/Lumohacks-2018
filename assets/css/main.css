@@ -639,9 +639,6 @@ RESPONSIVE
 }
 
 @media screen and (max-width:767px){
-  .banner{
-    background-image: url('../img/lumo-1.png');
-  }
 
   .banner__title {
     font-size: 48px;
@@ -698,13 +695,13 @@ RESPONSIVE
   #mobile-menu-open {
     /* display: none; */
     cursor: pointer;
-    position: fixed;
-    right: 15px;
-    top: 10px;
+    /* position: relative; */
+    /* right: 15px; */
+    /* top: 10px; */
     color: #6adacf;
     font-size: 1.5em;
     z-index: 20;
-    padding: 0 7px;
+    padding: 0 10px;
     border-radius: 4px;
     background: #fff
   }
