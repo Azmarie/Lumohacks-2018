@@ -222,7 +222,7 @@ header.sticky {
 BANNER
 ---------------------------------*/
 .banner{
-  /* background-color: #fff; */
+  background-color: #fff;
   background-image: url('../img/lumohacks_logo_white.png');
   background-repeat: no-repeat;
   background-size: 900px;
@@ -751,19 +751,18 @@ RESPONSIVE
     margin-bottom: 10px;
   }
   .banner {
-    background-size: 320px;
+    background-size: 350px;
   }
   .banner__overlay {
     position: relative;
+  }
+  .sect--great {
+  display: none;
   }
 
 }
 
 @media screen and (max-width:480px){
-  .banner {
-    background-size: 240px;
-    margin-top: -50px;
-  }
   .banner__title {
     font-size: 44px;
   }
