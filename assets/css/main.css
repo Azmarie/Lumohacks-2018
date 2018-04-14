@@ -751,7 +751,7 @@ RESPONSIVE
     margin-bottom: 10px;
   }
   .banner {
-    background-size: 350px;
+    background-size: 320px;
   }
   .banner__overlay {
     position: relative;
@@ -760,6 +760,10 @@ RESPONSIVE
 }
 
 @media screen and (max-width:480px){
+  .banner {
+    background-size: 240px;
+    margin-top: -50px;
+  }
   .banner__title {
     font-size: 44px;
   }
