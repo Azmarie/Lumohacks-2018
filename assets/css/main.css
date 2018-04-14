@@ -84,7 +84,7 @@ p{
 /*--------------------------------
 ANIOMATION
 ---------------------------------*/
-@-webkit-keyframes banner-in {
+/* @-webkit-keyframes banner-in {
   0% {
     background-color:rgba(0,0,0,1);
   }
@@ -148,7 +148,7 @@ ANIOMATION
   100% {
     opacity:1;
   }
-}
+} */
 
 /*--------------------------------
 HEADER
@@ -157,7 +157,7 @@ HEADER
 {
   animation-name: dropHeader;
   width: 100%;
-  background: -webkit-linear-gradient(to right, #6adacf, #3b2323);
+  /* background: -webkit-linear-gradient(to right, #6adacf, #3b2323); */
   background: linear-gradient(to right, #6adacf, #3b2323);
   border-bottom: 2px solid linear-gradient(to right, #6adacf, #3b2323);
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
@@ -516,7 +516,7 @@ FOOTER
   position: fixed; */
   bottom: 0;
   left: 0;
-  z-index: -1;
+  /* z-index: -1; */
 }
 
 .footer__half {
@@ -528,7 +528,6 @@ FOOTER
 .footer__half-1 {
   background-image: url('http://designlablive.com/wp-content/uploads/2016/12/Team_photo.jpg');
   background-position: left center;
-  /* width:50%; */
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -730,7 +729,7 @@ RESPONSIVE
   .navbar {
     position: fixed;
     display: none;
-    z-index: 999;
+    /* z-index: 999; */
     animation: none;
     bottom: 0;
   }
@@ -758,6 +757,20 @@ RESPONSIVE
   }
   .sect--great {
   display: none;
+  }
+
+  .banner__scroll-down {
+    background-color: #46B29D;
+    position: fixed;
+    bottom: 15px;
+    left: 50%;
+    right: 50%;
+    cursor: pointer;
+    animation: opacity 2s;
+  }
+
+  .footer__half-1 {
+    display: none;
   }
 
 }
