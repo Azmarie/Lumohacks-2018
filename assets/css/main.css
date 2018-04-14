@@ -560,13 +560,24 @@ FOOTER
 
 .footer__desc {
   color: #d7d7d7;
-  margin-bottom: 25px;
+  width:300px;
+  /* margin-bottom: 25px; */
 }
 
 .social a {
   color: #74808a;
-  padding: 20px;
   font-size: 20px;
+  padding-left: 4px;
+  margin-left: 33px;
+  display: inline-block;
+}
+
+.footer__aboutus {
+  padding-top: 10px;
+  padding-bottom: 18px;
+  padding-left: 42.5%;
+  padding-right: 42.5%;
+  background-color: #111;
 }
 
 /* .social {
@@ -789,9 +800,13 @@ RESPONSIVE
     display: none;
   }
 
-  /* .banner-mobile {
-    display: none;
-  } */
+  .footer__aboutus {
+    padding-left: 30.5%;
+  }
+
+  .social a {
+    margin-left: 12px;
+  }
 
 }
 
@@ -838,7 +853,8 @@ RESPONSIVE
     padding: 35px 35px;
   }
   .footer__desc {
-    margin-bottom: 10px;
+    font-size: 11px;
+    width: 180px;
   }
 
 }
@@ -876,14 +892,6 @@ li {
   line-height: 28px;
 }
 
-.footer__aboutus {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 42.5%;
-  padding-right: 42.5%;
-  background-color: #111;
-}
-
 .tagline {
   color:#767;
   font-family: "Lora", serif;
@@ -894,7 +902,7 @@ li {
 }
 
 .aboutus-img {
-  background-image: url('./img/voicefirst.jpg');
+  background-image: url('../img/voicefirst.jpg');
   height: 0;
   padding-bottom: 48%;
   margin-top: 40px;

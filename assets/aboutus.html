@@ -13,15 +13,21 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
-  <nav class="navbar">
-    <ul>
-      <li><a href="/index.html">Home</a></li>
-      <li><a href="/2017.html" target="_blank">Past Lumohacks</a></li>
-      <li><a href="/judging.html">Judging</a></li>
-      <li><a href="./partner.html">Become an event partner</a></li>
+  <div id="mobile-menu-open" class="shadow-large">
+    <i class="fa fa-bars" aria-hidden="true"></i>
+  </div>
+  <header class="navbar" style="margin-bottom: 0;" >
+    <div id="mobile-menu-close">
+      <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+    <ul id="menu" class="shadow">
+      <li><a href="/index.html" class="no-scroll">Home</a></li>
+      <li><a href="/2017.html" target="_blank" class="no-scroll">Past Lumohacks</a></li>
+      <li><a href="/judging.html" class="no-scroll">Judging</a></li>
+      <li><a href="/partner.html" class="no-scroll">Become an event partner</a></li>
       <li><a href="#">About us</a></li>
     </ul>
-  </nav>
+  </header>
   <div class="sect--type">
     <div class="container navpage">
       <div class="row row--center">
@@ -45,15 +51,16 @@
 
   <footer class="footer">
     <div class="footer__aboutus">
-      <p class="footer__desc" style="margin-bottom: 8px;">
+      <p class="footer__desc">
         Copyright &copy; 2018 Design Lab Live
       </p>
       <div class="social">
-        <span><a href="https://twitter.com/designlablive" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></span>
-        <span><a href="#" target="https://www.instagram.com/designlablive/"><i class="fa fa-instagram" aria-hidden="true"></i></a></span>
-        <span><a href="https://www.facebook.com/Design-Lab-235200070181237/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></span>
+        <a href="https://twitter.com/designlablive" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        <a href="#" target="https://www.instagram.com/designlablive/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        <a href="https://www.facebook.com/Design-Lab-235200070181237/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
       </div>
     </div>
   </footer>
+  <script src="js/scripts.js"></script>
 
 </body>
