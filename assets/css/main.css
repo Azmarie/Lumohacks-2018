@@ -155,13 +155,12 @@ HEADER
 ---------------------------------*/
 .navbar
 {
+  animation-name: dropHeader;
   width: 100%;
-  /* background: 3fa08d; */
   background: -webkit-linear-gradient(to right, #6adacf, #3b2323);
   background: linear-gradient(to right, #6adacf, #3b2323);
   border-bottom: 2px solid linear-gradient(to right, #6adacf, #3b2323);
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
-  margin: 0px;
 }
 .navbar > ul
 {
@@ -200,6 +199,24 @@ HEADER
   width: 100%;
 }
 
+
+header a:focus {
+  color: #6adacf;
+  text-decoration: none
+}
+
+header.active {
+  display: block
+}
+
+header.sticky {
+  position: fixed;
+  z-index: 999
+}
+
+#mobile-menu-open, #mobile-menu-close {
+  display: none;
+}
 
 /*--------------------------------
 BANNER
@@ -550,7 +567,7 @@ FOOTER
 }
 
 /* .social {
-  margin-left: -60px;
+margin-left: -60px;
 } */
 
 /*--------------------------------
@@ -671,6 +688,74 @@ RESPONSIVE
     padding-bottom:60%;
   }
 
+  #menu.active {
+    display: block
+  }
+
+  #mobile-menu-open {
+    /* display: none; */
+    cursor: pointer;
+    position: fixed;
+    right: 15px;
+    top: 10px;
+    color: #6adacf;
+    font-size: 1.5em;
+    z-index: 20;
+    padding: 0 7px;
+    border-radius: 4px;
+    background: #fff
+  }
+
+  #mobile-menu-close {
+    /* display: none; */
+    text-align: right;
+    width: 100%;
+    background: #fff;
+    font-size: 1.5em;
+    padding-right: 15px;
+    padding-top: 10px;
+    cursor: pointer;
+    color: #6adacf
+  }
+
+  #mobile-menu-close span {
+    font-size: 0.5em;
+    text-transform: uppercase
+  }
+
+  #mobile-menu-close i {
+    vertical-align: middle
+  }
+
+  .navbar {
+    position: fixed;
+    display: none;
+    z-index: 999;
+    animation: none;
+    bottom: 0;
+  }
+
+  #mobile-menu-open, #mobile-menu-close {
+    display: block;
+  }
+
+  #menu {
+    background-color:darken(#337ab7,45%);
+    overflow-y: auto;
+    box-shadow: none;
+    border-radius: 0;
+    width: 100%;
+  }
+  #menu li {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .banner {
+    background-size: 350px;
+  }
+  .banner__overlay {
+    position: relative;
+  }
 
 }
 
@@ -770,35 +855,35 @@ li {
   font-style: italic;
   margin-top: 30px;
   margin-bottom: 15px;
-  }
+}
 
 .aboutus-img {
-    background-image: url('../img/voicefirst.jpg');
-    height: 0;
-    padding-bottom: 48%;
-    margin-top: 40px;
-    background-position: top center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: #1d140b;
-  }
+  background-image: url('./img/voicefirst.jpg');
+  height: 0;
+  padding-bottom: 48%;
+  margin-top: 40px;
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #1d140b;
+}
 
-  .email {
-    text-align: center;
-  }
+.email {
+  text-align: center;
+}
 
-  .email svg {
-    vertical-align: middle;
-    margin-right: 5px;
-  }
+.email svg {
+  vertical-align: middle;
+  margin-right: 5px;
+}
 
-  .email a {
-    color: #6a8;
-    text-decoration: none;
-    font-family: Consolas;
-    letter-spacing: 1.25px;
-  }
+.email a {
+  color: #6a8;
+  text-decoration: none;
+  font-family: Consolas;
+  letter-spacing: 1.25px;
+}
 
-  .email a:hover {
-    color: #a3ccb7;
-  }
+.email a:hover {
+  color: #a3ccb7;
+}
