@@ -256,9 +256,9 @@ BANNER
 } */
 
 .banner__scroll-down {
-  background-color: #b2e8e0;
+  background-color: #46B29D;
   position: absolute;
-  bottom: -15px;
+  bottom: 0px;
   left: 50%;
   margin-left: -12px;
   cursor: pointer;
@@ -645,9 +645,11 @@ RESPONSIVE
 @media screen and (max-width:767px){
   .banner-mobile {
     display: block;
-    width: 100%;
+    width: 80%;
     height: 100%;
-    margin: 20%;
+    margin: auto;
+    text-align: center;
+    margin-top: 100px;
   }
   .banner__title {
     font-size: 48px;
