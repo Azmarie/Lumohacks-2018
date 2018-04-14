@@ -221,6 +221,9 @@ header.sticky {
 /*--------------------------------
 BANNER
 ---------------------------------*/
+.banner-mobile {
+  display: none;
+}
 .banner{
   background-color: #fff;
   background-image: url('../img/lumohacks_logo_white.png');
@@ -253,8 +256,9 @@ BANNER
 } */
 
 .banner__scroll-down {
+  background-color: #b2e8e0;
   position: absolute;
-  bottom: 15px;
+  bottom: -15px;
   left: 50%;
   margin-left: -12px;
   cursor: pointer;
@@ -639,7 +643,12 @@ RESPONSIVE
 }
 
 @media screen and (max-width:767px){
-
+  .banner-mobile {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 20%;
+  }
   .banner__title {
     font-size: 48px;
   }
@@ -773,6 +782,14 @@ RESPONSIVE
   .footer__half-1 {
     display: none;
   }
+
+  .banner {
+    display: none;
+  }
+
+  /* .banner-mobile {
+    display: none;
+  } */
 
 }
 
