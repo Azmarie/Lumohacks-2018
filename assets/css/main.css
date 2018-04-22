@@ -932,3 +932,20 @@ li {
 .email a:hover {
   color: #a3ccb7;
 }
+
+/* 2017 sponsors */
+.tz-gallery {
+    margin: 20px 20px 30px 30px;
+    /* display: inline-block */
+}
+
+.tz-gallery img {
+    width: 180px;
+    margin-bottom: 30px;
+    transition: 0.2s ease-in-out;
+}
+
+.tz-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3)
+}
