@@ -261,7 +261,7 @@ vertical-align: middle;
   position: absolute;
   bottom: 0px;
   left: 50%;
-  margin-left: -12px;
+  // margin-left: -12px;
   /* cursor: pointer; */
   animation: opacity 2s;
 }
@@ -278,11 +278,20 @@ vertical-align: middle;
 }
 
 .banner__text {
+  position: absolute;
+  bottom: 20%;
+  left: 36%;
   /* font-size: 14px; */
   color: #333;
   margin-top: 40%;
   margin-bottom: 18px;
   animation: opacity 2s;
+}
+
+.banner__btn {
+  position: absolute;
+  bottom: 15%;
+  left: 40%;
 }
 
 /*--------------------------------
@@ -404,11 +413,11 @@ THE BEST COFFEE SHOP
 
 .best__title {
   letter-spacing: 1px;
-  font-size: 14px;
+  font-size: 18px;
   /* text-transform: uppercase; */
-  font-weight: 600;
-  margin-top: 25px;
-  margin-bottom: 15px;
+  font-weight: 500;
+  margin-top: 45px;
+  margin-bottom: 20px;
   color: #3fa08d;
 }
 
