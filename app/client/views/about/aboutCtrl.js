@@ -1,5 +1,5 @@
 angular.module('reg')
-  .controller('HomeCtrl', [
+  .controller('AboutCtrl', [
     '$rootScope',
     '$scope',
     '$sce',

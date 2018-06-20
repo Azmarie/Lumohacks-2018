@@ -65,6 +65,19 @@ angular.module('reg')
           }
         }
       })
+      .state('about', {
+        url: "/about",
+        templateUrl: "views/about/about.html",
+        controller: 'AboutCtrl',
+        data: {
+          requireLogin: false
+        },
+        resolve: {
+          'settings': function(SettingsService){
+            return SettingsService.getPublicSettings();
+          }
+        }
+      })
       .state('app', {
         views: {
           '': {
