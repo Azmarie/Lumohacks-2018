@@ -39,6 +39,19 @@ angular.module('reg')
           }
         }
       })
+      .state('judging', {
+        url: "/judging",
+        templateUrl: "views/judging/judging.html",
+        controller: 'JudgingCtrl',
+        data: {
+          requireLogin: false
+        },
+        resolve: {
+          'settings': function(SettingsService){
+            return SettingsService.getPublicSettings();
+          }
+        }
+      })
       .state('app', {
         views: {
           '': {
