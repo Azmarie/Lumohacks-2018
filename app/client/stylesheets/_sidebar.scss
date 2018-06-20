@@ -1,8 +1,8 @@
 #sidebar {
   height: 100%;
   position: fixed;
-  background: $sidebar-color;
-  color: white;
+  background: lighten($sidebar-color, 50%);
+  color: black;
   width: $sidebar-width;
   z-index: 999;
   overflow: auto;
