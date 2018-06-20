@@ -1,0 +1,36 @@
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+
+/*--------------------------------
+RESET
+---------------------------------*/
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+.mini {
+  font-size: 1.25em;
+  color: #000;
+  text-indent: 2.5em;
+  text-align: center;
+  margin-top: 33%;
+}
+.mini a {
+  color: #6ac9da;
+}
+
+.mega, .bola{
+  line-height: 1.65em;
+  font-weight: bold;
+  font-size: 11em;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -150px;
+  margin-top: -150px;}
+
+.boom {color: #f5f5f5; }
