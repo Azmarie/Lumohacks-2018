@@ -22,9 +22,15 @@
         </div>
 
         <div class="field">
-          <label> What's your cell phone number? </label>
-          <p>We only use this for important announcements, such as the winning teams, and emergencies.</p>
-          <input type="text" name="phone" ng-model="user.profile.phone" class="ng-pristine ng-untouched ng-valid">
+          <label> What's your phone number? (required) </label>
+          <p>
+            We only use this for important announcements, such as the winning teams, and emergencies.
+          </p>
+          <input type="tel"
+                 name="phone"
+                 ng-model="user.profile.phoneNumber"
+                 placeholder="(778) - 000 - 0000"
+                 required>
         </div>
 
         <div class="field">
@@ -44,7 +50,7 @@
           </select>
         </div>
 
-        <div class="field ng-hide" ng-show="autoFilledSchool">
+        <!-- <div class="field ng-hide" ng-show="autoFilledSchool">
           <label> School </label>
           <input class="ui input ng-pristine ng-untouched ng-valid ng-hide" disabled="disabled" ng-show="autoFilledSchool" ng-model="user.profile.school">
         </div>
@@ -57,16 +63,35 @@
             </div>
             <div class="results"></div>
           </div>
+        </div> -->
+
+        <div class="field">
+          <label>Which school are you from</label>
+          <select name="school" ng-model="user.profile.Cschool" class="ng-pristine ng-untouched ng-valid">
+            <option value="">School</option>
+            <option value="NA">N/A - Not in school</option>
+            <option value="SFU">Simon Fraser University</option>
+            <option value="UBC">University of British Columbia</option>
+            <option value="UV">University of Victoria</option>
+            <option value="UW">University of Washington</option>
+            <option value="O">Other</option>
+          </select>
         </div>
 
         <div class="field">
-          <label>If so, which year in school are you in?</label>
+          <label> If you choose other, tell us where do you study?</label>
+          <input type="text" name="otherschool" ng-model="user.profile.otherschool" class="ng-pristine ng-untouched ng-valid">
+        </div>
+
+        <div class="field">
+          <label>If you are in school, which year are you in?</label>
           <select name="year" ng-model="user.profile.graduationYear" class="ng-pristine ng-untouched ng-valid">
-            <option value="">Graduation Year</option>
-            <option value="2016">2016</option>
-            <option value="2017">2017</option>
-            <option value="2018">2018</option>
-            <option value="2019">2019</option>
+            <option value="">Year of Study</option>
+            <option value="1">1st year undergraduate</option>
+            <option value="2">2nd year undergraduate</option>
+            <option value="3">3rd year undergraduate</option>
+            <option value="4">4th year undergraduate</option>
+            <option value="5">Graduate School</option>
           </select>
         </div>
 
@@ -112,10 +137,19 @@
           <input type="url" name="linkedin" ng-model="user.profile.linkedin" class="ng-pristine ng-untouched ng-valid ng-valid-url">
         </div>
 
-        <div class="field">
+        <!-- <div class="field">
           <label> Link to your Github</label>
           <input type="url" name="github" ng-model="user.profile.github" class="ng-pristine ng-untouched ng-valid ng-valid-url">
+        </div> -->
+
+        <div class="field">
+          <label> Link to your Github</label>
+          <input type="url"
+                 name="github"
+                 placeholder="https://github.com/foobar"
+                 ng-model="user.profile.github">
         </div>
+
 
         <div class="field">
           <label> Link to your Resume/CV</label>
@@ -170,16 +204,21 @@
         </div>
 
         <div class="field">
-          <label>What is your Tshirt size?</label>
-          <p>For your hackathon tshirt <3</p>
-          <select name="tshirt" ng-model="user.profile.tshirt" class="ng-pristine ng-untouched ng-valid"><option value="? undefined:undefined ?"></option>
-            <option value="">Size</option>
-            <option value="XS">XS</option>
-            <option value="S">S</option>
-            <option value="M">M</option>
-            <option value="L">L</option>
-            <option value="XL">XL</option>
-            <option value="XXL">XXL</option>
+          <label> What's your TShirt Size </label>
+          <p>
+            Let's get you some swag!
+          </p>
+          <select
+            name="shirt"
+            ng-model="user.profile.shirtSize"
+            required>
+            <option value="">Shirt Size</option>
+            <option value="XS">Unisex X-Small</option>
+            <option value="S">Unisex Small</option>
+            <option value="M">Unisex Medium</option>
+            <option value="L">Unisex Large</option>
+            <option value="XL">Unisex X-Large</option>
+            <option value="XXL">Unisex XX-Large</option>
           </select>
         </div>
 
@@ -188,7 +227,7 @@
           <p>Finally, check the box below if you've read and agree with the <a href="https://docs.google.com/document/d/1AhBHTmhN21j72vy3o4uV32Q4TwMfIwO4_NqnYBZLlws/edit?usp=sharing
           http://static.mlh.io/docs/mlh-code-of-conduct.pdf"> terms and conditions & the MLH Code of Conduct</a>.</p>
           <div class="ui checkbox">
-            <input type="checkbox">
+            <input type="checkbox" id="adult" ng-model="user.profile.adult">
             <label for="adult">I Agree.</label>
           </div>
       </div>

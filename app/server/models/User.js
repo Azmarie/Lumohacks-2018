@@ -19,7 +19,7 @@ var profile = {
     default: false,
   },
 
-  school: {
+  Cschool: {
     type: String,
     min: 1,
     max: 150,
@@ -28,7 +28,7 @@ var profile = {
   graduationYear: {
     type: String,
     enum: {
-      values: '2016 2017 2018 2019'.split(' '),
+      values: '1 2 3 4 5'.split(' '),
     }
   },
 
@@ -51,6 +51,47 @@ var profile = {
       values: 'M F O N'.split(' ')
     }
   },
+  // Added for lumohacks
+
+  phoneNumber: String,
+  location: String,
+
+  // dietaryRestrictions: [String],
+  shirtSize: {
+    type: String,
+    enum: {
+      values: 'XS S M L XL XXL'.split(' ')
+    }
+  },
+
+  channel: {
+    type: String,
+    enum: {
+      values: 'FF TW IG LI HE GG O'.split(' ')
+    }
+  },
+
+  dietres: {
+    type: String,
+    enum: {
+      values: 'N VGT VE O'.split(' ')
+    }
+  },
+  otherdietres:String,
+  otherchannel: String,
+
+  otherschool: String,
+  major: String,
+  othermajor: String,
+  github: String,
+  LinkedIn: String,
+
+  cv: String,
+  interest: {
+    type: String,
+    max: 300
+  },
+
 
 };
 
@@ -332,8 +373,8 @@ schema.statics.validateProfile = function(profile, cb){
   return cb(!(
     profile.name.length > 0 &&
     profile.adult &&
-    profile.school.length > 0 &&
-    ['2016', '2017', '2018', '2019'].indexOf(profile.graduationYear) > -1 &&
+    // profile.school.length > 0 &&
+    // ['1', '2', '3', '4','5'].indexOf(profile.graduationYear) > -1 &&
     ['M', 'F', 'O', 'N'].indexOf(profile.gender) > -1
     ));
 };
