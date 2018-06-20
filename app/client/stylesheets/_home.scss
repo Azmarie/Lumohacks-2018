@@ -227,7 +227,7 @@ BANNER
 }
 .banner{
   background-color: #fff;
-  background-image: url('../img/lumohacks_logo_white.png');
+  background-image: url('../assets/images/lumohacks_logo_white.png');
   background-repeat: no-repeat;
   background-size: 900px;
   background-position: center;
@@ -336,7 +336,7 @@ STORY
 
 .story-img {
   /* background-image: url('http://lumohacks.com/wp-content/uploads/2016/12/lumohacks_3d_printing-1024x683.jpg'); */
-  background-image: url('../img/lumo-1.jpg');
+  background-image: url('../assets/images/lumo-1.jpg');
   height: 0;
   padding-bottom: 52%;
   background-position: top center;
@@ -349,7 +349,7 @@ STORY
 2 HALF SECTION
 ---------------------------------*/
 .half-sect__second {
-  background-image: url('../img/lumo-4.jpg');
+  background-image: url('../assets/images/lumo-4.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -380,7 +380,7 @@ STORY
 GREAT COFFEE
 ---------------------------------*/
 .sect--great {
-  background-image: url('../img/lumo-5.jpg');
+  background-image: url('../assets/images/lumo-5.jpg');
 
   /* background-image: url('http://lumohacks.com/wp-content/uploads/2016/12/lumohacks_team_qleo-1024x683.jpg'); */
   background-position: center;
@@ -441,18 +441,6 @@ THREE IMAGES
   width: 100%;
 }
 
-/* .three-img--1 {
-background-image: url('./img/lumo-1.jpg');
-}
-
-.three-img--2 {
-background-image: url('./img/lumo-2.jpg');
-}
-
-.three-img--3 {
-background-image: url('./img/lumo-3.jpg');
-} */
-
 /*--------------------------------
 BLOG IMAGES
 ---------------------------------*/
@@ -499,26 +487,12 @@ BLOG IMAGES
   line-height: 22px;
 }
 
-/* .article-pre-3 .article-pre__img {
-background-image: url('./img/tema_logo.png');
-
-} */
-
-/* .article-pre-2 .article-pre__img {
-background-image: url('https://images.pexels.com/photos/64775/pexels-photo-64775.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb');
-}
-
-.article-pre-3 .article-pre__img {
-background-image: url('https://static.pexels.com/photos/373888/pexels-photo-373888.jpeg');
-}  */
-
 /*--------------------------------
 FOOTER
 ---------------------------------*/
 .footer {
   display: table;
   width: 100%;
-  /* position: fixed; */
   bottom: 0;
   left: 0;
   z-index: -1;
@@ -909,7 +883,7 @@ li {
 }
 
 .aboutus-img {
-  background-image: url('../img/voicefirst.jpg');
+  background-image: url('../assets/images/voicefirst.jpg');
   height: 0;
   padding-bottom: 48%;
   margin-top: 40px;
