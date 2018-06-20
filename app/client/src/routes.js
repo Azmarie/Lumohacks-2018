@@ -47,7 +47,7 @@ angular.module('reg')
         }
       })
       .state('app.dashboard', {
-        url: "/",
+        url: "/dashboard",
         templateUrl: "views/dashboard/dashboard.html",
         controller: 'DashboardCtrl',
         resolve: {
