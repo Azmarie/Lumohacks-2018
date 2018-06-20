@@ -52,6 +52,19 @@ angular.module('reg')
           }
         }
       })
+      .state('partner', {
+        url: "/partner",
+        templateUrl: "views/partner/partner.html",
+        controller: 'PartnerCtrl',
+        data: {
+          requireLogin: false
+        },
+        resolve: {
+          'settings': function(SettingsService){
+            return SettingsService.getPublicSettings();
+          }
+        }
+      })
       .state('app', {
         views: {
           '': {
