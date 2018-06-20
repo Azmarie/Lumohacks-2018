@@ -1,68 +1,47 @@
-<div id="application" class="page">
+<div id="application" class="page ng-scope">
   <div class="divided title">
     Application
   </div>
 
   <div class="ui stackable page grid">
     <div class="column">
-      <div class="ui form"
-            ng-class="{'loading': loading}">
+      <div class="ui form" ng-class="{'loading': loading}">
 
-        <div class="divided title">Basic Information</div>
+        <div class="divided title">Nice to Meet You</div>
 
         <fieldset ng-disabled="regIsClosed">
 
         <div class="field">
           <label> Email </label>
-          <input type="email"
-                 name="email"
-                 disabled="disabled"
-                 ng-model="user.email">
+          <input type="email" name="email" disabled="disabled" ng-model="user.email" class="ng-pristine ng-untouched ng-valid ng-valid-email">
         </div>
 
         <div class="field">
-          <label> Full Name </label>
-          <input type="text"
-                 name="name"
-                 ng-model="user.profile.name">
-        </div>
-
-        <div class="field" ng-show="autoFilledSchool">
-          <label> School </label>
-          <input class="ui input"
-                 disabled="disabled"
-                 ng-show="autoFilledSchool"
-                 ng-model="user.profile.school">
-        </div>
-
-        <div class="field" ng-show="!autoFilledSchool">
-          <label> School </label>
-          <div id="school" class="ui search">
-            <div class="ui input">
-              <input class="prompt" type="text" placeholder="School" name="school" ng-model="user.profile.school">                
-            </div>
-            <div class="results"></div>
-          </div>
+          <label> Full Name (First + Last) </label>
+          <input type="text" name="name" ng-model="user.profile.name" class="ng-pristine ng-untouched ng-valid">
         </div>
 
         <div class="field">
-          <label>Graduation Year</label>
-          <select
-            name="year"
-            ng-model="user.profile.graduationYear">
-            <option value="">Graduation Year</option>
-            <option value="2016">2016</option>
-            <option value="2017">2017</option>
-            <option value="2018">2018</option>
-            <option value="2019">2019</option>
-          </select>
+          <label> What's your phone number? (required) </label>
+          <p>
+            We only use this for important announcements, such as the winning teams, and emergencies.
+          </p>
+          <input type="tel"
+                 name="phone"
+                 ng-model="user.profile.phoneNumber"
+                 placeholder="(778) - 000 - 0000"
+                 required>
+        </div>
+
+        <div class="field">
+          <label> Which country/city are you traveling from for Lumohacks?</label>
+          <p>This helps us see how much space we may need for sleeping arrangements.</p>
+          <input type="text" placeholder="Vancouver" name="location" ng-model="user.profile.location" class="ng-pristine ng-untouched ng-valid">
         </div>
 
         <div class="field">
           <label>Gender</label>
-          <select
-            name="gender"
-            ng-model="user.profile.gender">
+          <select name="gender" ng-model="user.profile.gender" class="ng-pristine ng-untouched ng-valid">
             <option value="">Gender</option>
             <option value="M">Male</option>
             <option value="F">Female</option>
@@ -71,30 +50,189 @@
           </select>
         </div>
 
+        <!-- <div class="field ng-hide" ng-show="autoFilledSchool">
+          <label> School </label>
+          <input class="ui input ng-pristine ng-untouched ng-valid ng-hide" disabled="disabled" ng-show="autoFilledSchool" ng-model="user.profile.school">
+        </div>
+
+        <div class="field" ng-show="!autoFilledSchool">
+          <label> Which school are you from? </label>
+          <div id="school" class="ui search">
+            <div class="ui input">
+              <input class="prompt ng-pristine ng-untouched ng-valid" type="text" placeholder="School" name="school" ng-model="user.profile.school" autocomplete="off">
+            </div>
+            <div class="results"></div>
+          </div>
+        </div> -->
+
+        <div class="field">
+          <label>Which school are you from</label>
+          <select name="school" ng-model="user.profile.Cschool" class="ng-pristine ng-untouched ng-valid">
+            <option value="">School</option>
+            <option value="NA">N/A - Not in school</option>
+            <option value="SFU">Simon Fraser University</option>
+            <option value="UBC">University of British Columbia</option>
+            <option value="UV">University of Victoria</option>
+            <option value="UW">University of Washington</option>
+            <option value="O">Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label> If you choose other, tell us where do you study?</label>
+          <input type="text" name="otherschool" ng-model="user.profile.otherschool" class="ng-pristine ng-untouched ng-valid">
+        </div>
+
+        <div class="field">
+          <label>If you are in school, which year are you in?</label>
+          <select name="year" ng-model="user.profile.graduationYear" class="ng-pristine ng-untouched ng-valid">
+            <option value="">Year of Study</option>
+            <option value="1">1st year undergraduate</option>
+            <option value="2">2nd year undergraduate</option>
+            <option value="3">3rd year undergraduate</option>
+            <option value="4">4th year undergraduate</option>
+            <option value="5">Graduate School</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>What do you study?</label>
+          <select name="major" ng-model="user.profile.major" class="ng-pristine ng-untouched ng-valid">
+            <option value="">Major</option>
+            <option value="CS">Computing Science</option>
+            <option value="ENG">Engineering</option>
+            <option value="HS">Health Science</option>
+            <option value="DES">Design</option>
+            <option value="BUS">Business Administration</option>
+            <option value="O">Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label> If you choose other, tell us what do you study?</label>
+          <input type="text" name="othermajor" ng-model="user.profile.othermajor" class="ng-pristine ng-untouched ng-valid">
+        </div>
+
+        <!-- <div class="divided title">More About You</div> -->
+
         <div class="field">
           <label>I would describe myself as a...</label>
-          <input type="text"
-                 placeholder="Designer, Data Scientist, iOS Wizard, Hacker Extraordinaire"
-                 ng-model="user.profile.description">
+          <input type="text" placeholder="Student, Medical Researcher, Designer, Hacker Extraordinaire, Front-End/ Back-End Wizard..." ng-model="user.profile.description" class="ng-pristine ng-untouched ng-valid">
         </div>
 
         <div class="field">
           <label>
-              What would you like to learn or get out of HackMIT? (optional)
+              Can you summarize your interest in health/tech in one sentence?
           </label>
-          <textarea ng-model="user.profile.essay">
-          </textarea>
+          <textarea ng-model="user.profile.interest" placeholder="e.g. PhD student in bioinformatics; resident doctor in internal medicine. This helps us create a mix of people from different backgrounds!" class="ng-pristine ng-untouched ng-valid">          </textarea>
+        </div>
+
+        <div class="divided title">More About You</div>
+        <p>
+          The following questions help us see which workshops and mentors to invite to the hackathon! It also helps balance Lumohacks in terms of skillsets.
+        </p>
+
+        <div class="field">
+          <label> Link to your LinkedIn</label>
+          <input type="url" name="linkedin" ng-model="user.profile.linkedin" class="ng-pristine ng-untouched ng-valid ng-valid-url">
+        </div>
+
+        <!-- <div class="field">
+          <label> Link to your Github</label>
+          <input type="url" name="github" ng-model="user.profile.github" class="ng-pristine ng-untouched ng-valid ng-valid-url">
+        </div> -->
+
+        <div class="field">
+          <label> Link to your Github</label>
+          <input type="url"
+                 name="github"
+                 placeholder="https://github.com/foobar"
+                 ng-model="user.profile.github">
+        </div>
+
+
+        <div class="field">
+          <label> Link to your Resume/CV</label>
+          <input type="url" name="cv" ng-model="user.profile.cv" class="ng-pristine ng-untouched ng-valid ng-valid-url">
         </div>
 
         <div class="field">
           <label>
-              What would you like to say to foobar?
+              What would you like to learn or get out of Lumohacks? (optional)
           </label>
-          <textarea ng-model="user.profile.foobar">
-          </textarea>
+          <textarea ng-model="user.profile.essay" class="ng-pristine ng-untouched ng-valid">          </textarea>
         </div>
 
-        <div class="field"
+        <div class="divided title">Help us organize</div>
+
+        <div class="field">
+          <label>How did you hear about Lumohacks?</label>
+          <select name="channel" ng-model="user.profile.channel" class="ng-pristine ng-untouched ng-valid"><option value="? undefined:undefined ?"></option>
+            <!-- <option value=""></option> -->
+            <option value="FF">Friends/ Family</option>
+            <option value="SE">School Email</option>
+            <option value="FB">Facebook</option>
+            <option value="TW">Twitter</option>
+            <option value="IG">Instagram</option>
+            <option value="LI">Linkedin</option>
+            <option value="HE">Hacker Earth</option>
+            <option value="GG">Google Search</option>
+            <option value="O">Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label> If you choose other, we'd love to know how?</label>
+          <input type="text" name="otherchannel" ng-model="user.profile.otherchannel" class="ng-pristine ng-untouched ng-valid">
+        </div>
+
+        <div class="field">
+          <label>Do you have any dietary restrictions?</label>
+          <p>There will be alternatives for people who are Vegetarian. There may be food options provided for other dietary restrictions, but we cannot guarantee this for all meals due to funding limitations, so please be prepared to bring your own food, thanks!</p>
+          <select name="dietres" ng-model="user.profile.dietres" class="ng-pristine ng-untouched ng-valid"><option value="? undefined:undefined ?"></option>
+            <!-- <option value=""></option> -->
+            <option value="N">No Restrictions</option>
+            <option value="VGT">Vegetarian</option>
+            <option value="VE">Vegan</option>
+            <option value="O">Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label> If you choose other, please let us know</label>
+          <input type="text" name="otherdietres" ng-model="user.profile.otherdietres" class="ng-pristine ng-untouched ng-valid">
+        </div>
+
+        <div class="field">
+          <label> What's your TShirt Size </label>
+          <p>
+            Let's get you some swag!
+          </p>
+          <select
+            name="shirt"
+            ng-model="user.profile.shirtSize"
+            required>
+            <option value="">Shirt Size</option>
+            <option value="XS">Unisex X-Small</option>
+            <option value="S">Unisex Small</option>
+            <option value="M">Unisex Medium</option>
+            <option value="L">Unisex Large</option>
+            <option value="XL">Unisex X-Large</option>
+            <option value="XXL">Unisex XX-Large</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <p>After submitting your application, we will send you details within the next week! Please make sure contact@designlablive.com is in your Safe contacts list and check your spam/junk mail!</p>
+          <p>Finally, check the box below if you've read and agree with the <a href="https://docs.google.com/document/d/1AhBHTmhN21j72vy3o4uV32Q4TwMfIwO4_NqnYBZLlws/edit?usp=sharing
+          http://static.mlh.io/docs/mlh-code-of-conduct.pdf"> terms and conditions & the MLH Code of Conduct</a>.</p>
+          <div class="ui checkbox">
+            <input type="checkbox" id="adult" ng-model="user.profile.adult">
+            <label for="adult">I Agree.</label>
+          </div>
+      </div>
+
+        <!-- <div class="field"
              ng-hide="isMitStudent">
           <p>
             Because of limitations imposed by MIT, we are not legally allowed to host
@@ -109,14 +247,12 @@
             <input type="checkbox" id="adult" ng-model="user.profile.adult">
             <label for="adult">I am 18 or older.</label>
           </div>
-        </div>
+        </div> -->
 
         <br>
 
         <div class="field" ng-hide="regIsClosed">
-          <button type="submit"
-                  class="fluid ui purple button"
-                  ng-click="submitForm()">
+          <button type="submit" class="fluid ui blue button" ng-click="submitForm()">
             Submit
           </button>
         </div>
