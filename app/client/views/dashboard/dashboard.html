@@ -6,6 +6,7 @@
   <div class="ui stackable centered page grid">
     <div class="column">
       <div class="ui status segment">
+        <!-- <p> Welcome to Lumohacks 2018 - our goal is to bring together people from all backgrounds to tackle health challenges using tech! <br /><br />To ensure that our acceptance process is fair and transparent, we look at applications based on all materials submitted. Please note that the event is held in Vancouver, BC (Canada). <br /><br />After submitting your application, you will hear from us within a few days. Because there are a limited number of seats, you may be placed on the waitlist as well.</p> -->
         <div class="small title">
           Your status:
         </div>
@@ -54,7 +55,7 @@
           <p>
             {{ DASHBOARD.UNVERIFIED }}
           </p>
-          <div class="ui purple button" ng-click="resendEmail()">
+          <div class="ui blue button" ng-click="resendEmail()">
             Resend verification email
           </div>
         </div>
@@ -89,7 +90,7 @@
             {{ DASHBOARD.INCOMPLETE }}
           </p>
 
-          <div class="ui purple button"
+          <div class="ui blue button"
                ui-sref="app.application">
             Complete your application
           </div>
@@ -107,7 +108,7 @@
           <p>
             {{ DASHBOARD.SUBMITTED }}
           </p>
-          <div class="ui purple button"
+          <div class="ui blue button"
                ui-sref="app.application">
             Edit your application
           </div>
@@ -149,7 +150,7 @@
             ng-bind-html="waitlistText">
           </div>
 
-          <div class="ui purple button"
+          <div class="ui blue button"
                ui-sref="app.application">
             View your application
           </div>
@@ -183,7 +184,7 @@
             </h4>
           </div>
 
-          <div class="ui purple button"
+          <div class="ui blue button"
                ui-sref="app.confirmation">
             Confirm your spot
           </div>
@@ -228,7 +229,7 @@
             ng-bind-html="confirmationText">
           </div>
 
-          <div class="ui purple button"
+          <div class="ui blue button"
                ui-sref="app.confirmation">
             {{pastConfirmation ? 'View' : 'Edit'}} your confirmation information
           </div>
