@@ -39,6 +39,7 @@ angular.module('reg')
         });
 
       $scope.$watch('queryText', function(queryText){
+        queryText = (queryText ? queryText : '');
         UserService
           .getPage($stateParams.page, $stateParams.size, queryText)
           .success(function(data){
@@ -295,46 +296,3 @@ angular.module('reg')
       $scope.selectUser = selectUser;
 
     }]);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
