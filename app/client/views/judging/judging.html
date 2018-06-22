@@ -2,7 +2,9 @@
 <link rel="icon" href="./img/lumohackslogo.ico" type="image/x-icon">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 <div id="mobile-menu-open" class="shadow-large">
   <i class="fa fa-bars" aria-hidden="true"></i>
 </div>
@@ -18,55 +20,43 @@
   </ul>
 </header>
 <div class="sect--type">
-  <div class="container">
+  <div class="container navpage">
+
     <div class="row row--center">
-      <div class="col-md-12 col-xs-12 col-sm-6 col--inbl">
+      <div class="col-md-12 col-sm-12 coffee">
         <h2 class="sect__subtitle">
           While we’re all trying to tackle mental health problems, <br />here is the criteria that our judges are looking for!
         </h2>
       </div>
     </div>
-    <div class="row--small row--center">
-      <div class="col-md-12 col-sm-12 coffee">
-        <h2 class="coffee__name">
-        The goal is to create a proof-of-concept with working parts–code or hardware that can be tested after the hackathon.</h2>
-      </div>
 
-      <div class="col-md-12 col-sm-12 coffee">
-        <h2 class="coffee__name">Innovation / Creativity</h2>
-        <p class="navpage__descr">
-          Does this project solve a problem in an interesting or effective way?
-        </p>
-      </div>
+    <div class="pt-4">
+	<ol class="list-timeline">
+		<li class="d-flex align-items-start pb-4">
+			<span class="badge-danger badge-circle mr-4">Creativity</span>
+			<span class="timeline-content">Does this project solve a problem in an interesting or effective way?</span>
+		</li>
+		<li class="d-flex align-items-start pb-4">
+			<span class="badge-danger badge-circle mr-4">Usability</span>
+			<span class="timeline-content">The experience of using the product –
+How easy is it to use? <br/>
+Is it desirable or nice to use? Would a person with mental health challenges want to use it?</span>
+		</li>
+		<li class="d-flex align-items-start pb-4">
+			<span class="badge-danger badge-circle mr-4">Technical <br />Challenge</span>
+			<span class="timeline-content">How technically difficult or interesting is the project?</span>
+		</li>
+		<li class="d-flex align-items-start pb-4">
+			<span class="badge-danger badge-circle mr-4">Impact</span>
+			<span class="timeline-content">Does this solve the problem? <br/>How much will it affect someone with mental health challenges? <br/>How much will it improve quality of life?</span>
+		</li>
+		<li class="d-flex align-items-start pb-4">
+			<span class="badge-danger badge-circle mr-4">Ready for <br /> Launch</span>
+			<span class="timeline-content">How easily can this project be launched or implemented in real world?</span>
+		</li>
+	</ol>
+</div>
 
-      <div class="col-md-12 col-sm-12 coffee">
-        <h2 class="coffee__name">Technical Challenge</h2>
-        <p class="navpage__descr">
-          How technically difficult or interesting is the project?
-        </p>
-      </div>
-
-      <div class="col-md-12 col-sm-12 coffee">
-        <h2 class="coffee__name">Usability</h2>
-        <p class="navpage__descr">
-          The experience of using the product – <br />How easy is it to use? <br />Is it desirable or nice to use? Would a person with mental health challenges want to use it?
-        </p>
-      </div>
-
-      <div class="col-md-12 col-sm-12 coffee">
-        <h2 class="coffee__name">Impact</h2>
-        <p class="navpage__descr">
-          Does this solve the problem? <br />How much will it affect someone with mental health challenges? <br />How much will it improve quality of life?
-        </p>
-      </div>
-
-      <div class="col-md-12 col-sm-12 coffee">
-        <h2 class="coffee__name">Ready for Launch</h2>
-        <p class="navpage__descr">
-          How easily can this project be launched or implemented?
-        </p>
-      </div>
-    </div>
   </div>
 </div>
 
@@ -89,3 +79,9 @@
     </div>
   </div>
 </footer>
+<script>
+  var node = document.body.children[0];
+  if (node.classList.contains("container")) {
+    node.classList.remove("container");
+  }
+</script>

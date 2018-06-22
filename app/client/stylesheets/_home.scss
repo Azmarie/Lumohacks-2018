@@ -155,6 +155,8 @@ HEADER
 ---------------------------------*/
 .navbar
 {
+  display: block !important;
+  padding: 0 !important;
   z-index: 2;
   animation-name: dropHeader;
   width: 100%;
@@ -260,7 +262,7 @@ vertical-align: middle;
   background-color: #46B29D;
   position: absolute;
   bottom: 0px;
-  left: 50%;
+  right: 50%;
   // margin-left: -12px;
   /* cursor: pointer; */
   animation: opacity 2s;
@@ -280,7 +282,7 @@ vertical-align: middle;
 .banner__text {
   position: absolute;
   bottom: 20%;
-  left: 36%;
+  left: 34%;
   /* font-size: 14px; */
   color: #333;
   margin-top: 40%;
@@ -291,7 +293,7 @@ vertical-align: middle;
 .banner__btn {
   position: absolute;
   bottom: 15%;
-  left: 40%;
+  left: 38%;
 }
 
 /*--------------------------------
@@ -494,6 +496,46 @@ BLOG IMAGES
 .article-pre__ex {
   margin: 0;
   line-height: 22px;
+}
+
+/*--------------------------------
+JUDGIN
+---------------------------------*/
+
+$tl-circle-size: 85px;
+$tl-line-height: 1.5em;
+$tl-border-width: 2px;
+
+.badge-circle {
+	background-color: #ddd;
+	color:#333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	position: relative;
+	left: -($tl-circle-size + $tl-border-width)/2;
+	top: -($tl-circle-size + $tl-border-width)/2 + 1px;
+    height: $tl-circle-size;
+    width: $tl-circle-size;
+    min-width: $tl-circle-size;
+	font-size: $tl-circle-size/6;
+    border-radius: 50%;
+}
+
+.list-timeline {
+	padding-left: $tl-circle-size/2;
+	padding-top: $tl-circle-size/2;
+	> li {
+    display: block;
+		border-left: $tl-border-width solid #ddd;
+		.timeline-content {
+			position: relative;
+			top: -$tl-line-height/2;
+		}
+		&:last-child {
+			border-left: $tl-border-width solid transparent;
+		}
+	}
 }
 
 /*--------------------------------
@@ -847,21 +889,21 @@ RESPONSIVE
 }
 
 /* footer */
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
-}
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
+// @media (min-width: 1200px) {
+//   .container {
+//     width: 1170px;
+//   }
+// }
+// @media (min-width: 992px) {
+//   .container {
+//     width: 970px;
+//   }
+// }
+// @media (min-width: 768px) {
+//   .container {
+//     width: 750px;
+//   }
+// }
 .footercontainer {
   margin-right: auto;
   margin-left: auto;
