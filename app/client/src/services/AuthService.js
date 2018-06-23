@@ -54,6 +54,10 @@ angular.module('reg')
       };
 
       authService.logout = function(callback) {
+        // swal("Are you sure?", {
+        //   dangerMode: true,
+        //   buttons: true,
+        // });
         // Clear the session
         Session.destroy(callback);
         $state.go('login');

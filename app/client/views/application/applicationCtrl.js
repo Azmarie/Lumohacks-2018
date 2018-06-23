@@ -22,6 +22,7 @@ angular.module('reg')
       }
 
       // Populate the school dropdown
+    // debugger;
       populateSchools();
       _setupForm();
 
@@ -45,26 +46,26 @@ angular.module('reg')
 
         $http
           .get('/assets/schools.csv')
-          .then(function(res){ 
+          .then(function(res){
             $scope.schools = res.data.split('\n');
             $scope.schools.push('Other');
 
             var content = [];
 
-            for(i = 0; i < $scope.schools.length; i++) {                                          
-              $scope.schools[i] = $scope.schools[i].trim(); 
+            for(i = 0; i < $scope.schools.length; i++) {
+              $scope.schools[i] = $scope.schools[i].trim();
               content.push({title: $scope.schools[i]})
             }
 
             $('#school.ui.search')
               .search({
                 source: content,
-                cache: true,     
-                onSelect: function(result, response) {                                    
+                cache: true,
+                onSelect: function(result, response) {
                   $scope.user.profile.school = result.title.trim();
-                }        
-              })             
-          });          
+                }
+              })
+          });
       }
 
       function _updateUser(e){
@@ -103,9 +104,9 @@ angular.module('reg')
 
       function _setupForm(){
         // Custom minors validation rule
-        $.fn.form.settings.rules.allowMinors = function (value) {
-          return minorsValidation();
-        };
+        //$.fn.form.settings.rules.allowMinors = function (value) {
+        //  return minorsValidation();
+        //};
 
         // Semantic-UI form validation
         $('.ui.form').form({
@@ -129,12 +130,12 @@ angular.module('reg')
                 }
               ]
             },
-            year: {
-              identifier: 'year',
+            major: {
+              identifier: 'major',
               rules: [
                 {
                   type: 'empty',
-                  prompt: 'Please select your graduation year.'
+                  prompt: 'Please select your major.'
                 }
               ]
             },
@@ -147,12 +148,21 @@ angular.module('reg')
                 }
               ]
             },
+            shirtSize: {
+              identifier: 'shirtSize',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: 'Please select at least one.'
+                }
+              ]
+            },
             adult: {
               identifier: 'adult',
               rules: [
                 {
-                  type: 'allowMinors',
-                  prompt: 'You must be an adult, or an MIT student.'
+                  type: 'empty',
+                  prompt: 'Please read the terms :)'
                 }
               ]
             }
@@ -163,6 +173,7 @@ angular.module('reg')
 
 
       $scope.submitForm = function(){
+          debugger;
         if ($('.ui.form').form('is valid')){
           _updateUser();
         }

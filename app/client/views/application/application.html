@@ -22,7 +22,7 @@
         </div>
 
         <div class="field">
-          <label> What's your phone number? (required) </label>
+          <label> What's your phone number?</label>
           <p>
             We only use this for important announcements, such as the winning teams, and emergencies.
           </p>
@@ -158,7 +158,7 @@
 
         <div class="field">
           <label>
-              What would you like to learn or get out of Lumohacks? (optional)
+              What would you like to learn or get out of Lumohacks?
           </label>
           <textarea ng-model="user.profile.essay" class="ng-pristine ng-untouched ng-valid">          </textarea>
         </div>
@@ -209,10 +209,10 @@
             Let's get you some swag!
           </p>
           <select
-            name="shirt"
+            name="shirtSize"
             ng-model="user.profile.shirtSize"
             required>
-            <option value="">Shirt Size</option>
+            <option value="">Shirt size</option>
             <option value="XS">Unisex X-Small</option>
             <option value="S">Unisex Small</option>
             <option value="M">Unisex Medium</option>
@@ -262,3 +262,9 @@
     </div>
   </div>
 </div>
+<script>
+  var node = document.body.children[0];
+  if (!node.classList.contains("container")) {
+    node.classList.add("container");
+  }
+</script>
