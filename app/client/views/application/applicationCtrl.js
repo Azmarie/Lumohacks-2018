@@ -130,6 +130,16 @@ angular.module('reg')
                 }
               ]
             },
+            phoneNumber: {
+              identifier: 'phoneNumber',
+              rules: [
+                {
+                  // type:'', 
+                  // TO-DO: add validation
+                  prompt: 'Please enter a valid phone number.'
+                }
+              ]
+            },
             major: {
               identifier: 'major',
               rules: [

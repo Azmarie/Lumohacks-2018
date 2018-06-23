@@ -231,8 +231,8 @@ BANNER
   background-color: #fff;
   background-image: url('../assets/images/lumohacks_logo_white.png');
   background-repeat: no-repeat;
-  background-size: 900px;
-  background-position: center;
+  background-size: 800px;
+  background-position: 50% 35%;
   /* background-size: cover; */
   background-attachment: fixed;
   display: table;
@@ -292,9 +292,108 @@ vertical-align: middle;
 
 .banner__btn {
   position: absolute;
-  bottom: 15%;
-  left: 38%;
+  bottom: 30%;
+  left: 43%;
 }
+/*--------------------------------
+APPLICATION BUTTON
+---------------------------------*/
+@import 'https://fonts.googleapis.com/css?family=Bungee+Shade';
+
+.apply-btn.striped-shadow span {
+  display: block;
+  position: relative;
+  z-index: 2;
+  border: 5px solid;
+}
+.apply-btn.striped-shadow.dark span {
+  font-family: 'Bungee Shade', sans-serif;
+  font-size: 18px;
+  border-color: #3f2122;
+  background: #06e2c7;
+  color: #3f2122;
+}
+
+.apply-btn {
+  // height: 80px;
+  // line-height: 65px;
+  display: inline-block;
+  letter-spacing: 1px;
+  position: relative;
+  font-size: 1.35rem;
+  transition: opacity .3s, z-index .3s step-end, -webkit-transform .3s;
+  transition: opacity .3s, z-index .3s step-end, transform .3s;
+  transition: opacity .3s,
+    z-index .3s step-end,
+    transform .3s,
+    -webkit-transform .3s;
+  z-index: 1;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.apply-btn {
+  width: 218px;
+  height: 52px;
+  line-height: 38px;
+}
+
+a.apply-btn.striped-shadow.dark:after, a.apply-btn.striped-shadow.dark:before {
+  background-image: linear-gradient(
+    135deg,
+    transparent 0,
+    transparent 5px,
+    #3f2122 5px,
+    #3f2122 10px,
+    transparent 5px
+  );
+}
+
+a.apply-btn.striped-shadow:hover:before {
+  max-height: calc(100% - 10px);
+}
+
+a.apply-btn.striped-shadow:after {
+  width: calc(100% - 6px);
+  height: 6px;
+  left: -5px;
+  bottom: -8px;
+  background-size: 15px 6px;
+  background-repeat: repeat-x;
+}
+a.apply-btn.striped-shadow:after, a.apply-btn.striped-shadow:before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 1;
+  transition: max-height .3s, width .3s, -webkit-transform .3s;
+  transition: transform .3s, max-height .3s, width .3s;
+  transition: transform .3s, max-height .3s, width .3s, -webkit-transform .3s;
+}
+
+.apply-btn.striped-shadow:hover {
+  -webkit-transform: translate(-12px, 12px);
+  -ms-transform: translate(-12px, 12px);
+  transform: translate(-12px, 12px);
+  z-index: 3;
+}
+
+a.apply-btn.striped-shadow:hover:after, a.apply-btn.striped-shadow:hover:before {
+  -webkit-transform: translate(12px, -12px);
+  -ms-transform: translate(12px, -12px);
+  transform: translate(12px, -12px);
+}
+a.apply-btn.striped-shadow:before {
+  width: 6px;
+  max-height: calc(100%);
+  height: 100%;
+  left: -12px;
+  bottom: -5px;
+  background-size: 8px 15px;
+  background-repeat: repeat-y;
+  background-position: 0 100%;
+}
+
 
 /*--------------------------------
 TYPE OF COFFEE
