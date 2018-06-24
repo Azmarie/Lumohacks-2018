@@ -79,6 +79,14 @@ Is it desirable or nice to use? Would a person with mental health challenges wan
     </div>
   </div>
 </footer>
+<style>
+@media (max-width: 766px) {
+    #mobile-menu-open + header.navbar:not(.active) {
+        display: none;
+    }
+}
+
+</style>
 <script>
   var header = document.getElementsByTagName('header')[0];
   var body = document.body;
@@ -90,14 +98,13 @@ Is it desirable or nice to use? Would a person with mental health challenges wan
   }
 
   document.getElementById('mobile-menu-open').onclick = function() {
-    header.style.display = 'block';
+    header.classList.add("active");
   };
 
   document.getElementById('mobile-menu-close').onclick = function() {
-    header.style.display = 'none';
+    header.classList.remove("active");
   };
 
-  header.style.display = 'none';
   header.classList.remove("active");
   body.classList.remove("active");
 </script>
