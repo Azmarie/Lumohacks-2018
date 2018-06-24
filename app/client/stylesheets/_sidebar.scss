@@ -34,6 +34,7 @@
     }
 
     &.logo {
+      width: 240px;
       opacity: 1;
       padding: 48px;
     }
@@ -54,9 +55,9 @@
   // Tab is the sibling of the sidebar
   +.tab {
     position: fixed;
-    width: $sidebar-tab-size;
-    height: $sidebar-tab-size;
-    background: $sidebar-color;
+    // width: $sidebar-tab-size;
+    height: $sidebar-tab-size - 15px;
+    background: lighten($sidebar-color, 30%);
     top: 12px;
 
     z-index: 9999;
@@ -79,6 +80,7 @@
 }
 
 @media only screen and (max-width: 768px) {
+  
   #sidebar {
     @include transform(translate3d(-$sidebar-width, 0, 0));
 
@@ -101,7 +103,7 @@
       visibility: 'visible';
       opacity: 1;
       @include transform(translate3d(0,0,0));
-      padding: 12px;
+      padding: 7px;
     }
     .note {
       display: none;
