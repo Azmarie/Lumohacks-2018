@@ -5,14 +5,15 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
-<div id="mobile-menu-open" class="shadow-large">
+<div id="mobile-menu-open" class="shadow-large" >
   <i class="fa fa-bars" aria-hidden="true"></i>
 </div>
-<header class="navbar" style="margin-bottom: 0;" >
+<header class="navbar" >
   <div id="mobile-menu-close">
     <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
   </div>
-  <ul id="menu" class="shadow">
+  <ul id="menu" class="shadow" style="margin-left: auto;
+    margin-right: auto;">
     <li><a href="/" class="no-scroll">Home</a></li>
     <li><a href="#" class="no-scroll">Judging</a></li>
     <li><a href="/partner" class="no-scroll">Become a partner</a></li>
@@ -93,8 +94,8 @@ Is it desirable or nice to use? Would a person with mental health challenges wan
 
   var node = document.body.children[0];
 
-  if (!node.classList.contains("container")) {
-    node.classList.add("container");
+  if (node.classList.contains("container")) {
+    node.classList.remove("container");
   }
 
   document.getElementById('mobile-menu-open').onclick = function() {
