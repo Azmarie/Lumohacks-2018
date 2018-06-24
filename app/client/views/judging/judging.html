@@ -90,15 +90,14 @@ Is it desirable or nice to use? Would a person with mental health challenges wan
   }
 
   document.getElementById('mobile-menu-open').onclick = function() {
-    header.classList.add("active");
-    body.classList.add("active");
+    header.style.display = 'block';
   };
 
   document.getElementById('mobile-menu-close').onclick = function() {
-    header.classList.remove("active");
-    body.classList.remove("active");
+    header.style.display = 'none';
   };
 
+  header.style.display = 'none';
   header.classList.remove("active");
   body.classList.remove("active");
 </script>
