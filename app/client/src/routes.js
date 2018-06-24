@@ -29,7 +29,6 @@ angular.module('reg')
       .state('home', {
         url: "/",
         templateUrl: "views/home/home.html",
-        controller: 'HomeCtrl',
         data: {
           requireLogin: false
         },
@@ -42,7 +41,6 @@ angular.module('reg')
       .state('judging', {
         url: "/judging",
         templateUrl: "views/judging/judging.html",
-        controller: 'JudgingCtrl',
         data: {
           requireLogin: false
         },
@@ -55,7 +53,6 @@ angular.module('reg')
       .state('partner', {
         url: "/partner",
         templateUrl: "views/partner/partner.html",
-        controller: 'PartnerCtrl',
         data: {
           requireLogin: false
         },
@@ -68,7 +65,6 @@ angular.module('reg')
       .state('about', {
         url: "/about",
         templateUrl: "views/about/about.html",
-        controller: 'AboutCtrl',
         data: {
           requireLogin: false
         },

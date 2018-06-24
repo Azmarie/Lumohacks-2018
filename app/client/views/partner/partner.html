@@ -67,3 +67,26 @@
     </div>
   </div>
 </footer>
+<script>
+  var header = document.getElementsByTagName('header')[0];
+  var body = document.body;
+
+  var node = document.body.children[0];
+
+  if (!node.classList.contains("container")) {
+    node.classList.add("container");
+  }
+
+  document.getElementById('mobile-menu-open').onclick = function() {
+    header.classList.add("active");
+    body.classList.add("active");
+  };
+
+  document.getElementById('mobile-menu-close').onclick = function() {
+    header.classList.remove("active");
+    body.classList.remove("active");
+  };
+
+  header.classList.remove("active");
+  body.classList.remove("active");
+</script>
