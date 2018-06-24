@@ -23,6 +23,21 @@ function calculateStats(){
         '2017': 0,
         '2018': 0,
         '2019': 0,
+      },
+      university: {
+        sfu: 0,
+        ubc: 0,
+        uvic: 0,
+        uw: 0,
+        o: 0
+      },
+      degree: {
+        cpsc: 0,
+        eng: 0,
+        hsc: 0,
+        de: 0,
+        badmin: 0,
+        o: 0
       }
     },
 
