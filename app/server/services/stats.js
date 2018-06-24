@@ -24,19 +24,19 @@ function calculateStats(){
         '2018': 0,
         '2019': 0,
       },
-      university: {
+      cschool: {
         sfu: 0,
         ubc: 0,
-        uvic: 0,
+        uv: 0,
         uw: 0,
         o: 0
       },
-      degree: {
-        cpsc: 0,
+      major: {
+        cs: 0,
         eng: 0,
-        hsc: 0,
-        de: 0,
-        badmin: 0,
+        hs: 0,
+        des: 0,
+        bus: 0,
         o: 0
       }
     },
@@ -193,6 +193,34 @@ function calculateStats(){
             }
             newStats.dietaryRestrictions[restriction] += 1;
           });
+        }
+
+        // University
+        if (user.profile.Cschool === 'SFU') {
+          newStats.demo.cschool.sfu++;
+        } else if (user.profile.Cschool === 'UBC') {
+          newStats.demo.cschool.ubc++;
+        } else if (user.profile.Cschool === 'UV') {
+          newStats.demo.cschool.uv++;
+        } else if (user.profile.Cschool === 'UW') {
+          newStats.demo.cschool.uw++;
+        } else {
+          newStats.demo.cschool.o++;
+        }
+
+        // Degree
+        if (user.profile.major === 'CS') {
+          newStats.demo.major.cs++;
+        } else if (user.profile.Cschool === 'ENG') {
+          newStats.demo.major.eng++;
+        } else if (user.profile.Cschool === 'DES') {
+          newStats.demo.major.des++;
+        } else if (user.profile.Cschool === 'HS') {
+          newStats.demo.major.hs++;
+        } else if (user.profile.Cschool === 'BUS') {
+          newStats.demo.major.bus++;
+        } else {
+          newStats.demo.major.o++;
         }
 
         // Count checked in
