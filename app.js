@@ -1,6 +1,7 @@
 // Load the dotfiles.
 require('dotenv').load({silent: true});
 
+var sslRedirect     = require('heroku-ssl-redirect');
 var express         = require('express');
 
 // Middleware!
@@ -21,6 +22,7 @@ var app             = express();
 mongoose.connect(database);
 
 app.use(morgan('dev'));
+app.use(sslRedirect());
 
 app.use(bodyParser.urlencoded({
   extended: true
