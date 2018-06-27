@@ -40,7 +40,7 @@
         </div>
 
         <div class="field">
-          <label>Gender</label>
+          <label>Gender (required)</label>
           <select name="gender" ng-model="user.profile.gender" class="ng-pristine ng-untouched ng-valid">
             <option value="">Gender</option>
             <option value="M">Male</option>
@@ -66,7 +66,7 @@
         </div> -->
 
         <div class="field">
-          <label>Which school are you from</label>
+          <label>Which school are you from (required)</label>
           <select name="school" ng-model="user.profile.Cschool" class="ng-pristine ng-untouched ng-valid">
             <option value="">School</option>
             <option value="NA">N/A - Not in school</option>
@@ -85,7 +85,7 @@
 
         <div class="field">
           <label>If you are in school, which year are you in?</label>
-          <select name="year" ng-model="user.profile.graduationYear" class="ng-pristine ng-untouched ng-valid">
+          <select name="year" ng-model="user.profile.year" class="ng-pristine ng-untouched ng-valid">
             <option value="">Year of Study</option>
             <option value="1">1st year undergraduate</option>
             <option value="2">2nd year undergraduate</option>
@@ -96,7 +96,7 @@
         </div>
 
         <div class="field">
-          <label>What do you study?</label>
+          <label>What do you study? (required)</label>
           <select name="major" ng-model="user.profile.major" class="ng-pristine ng-untouched ng-valid">
             <option value="">Major</option>
             <option value="CS">Computing Science</option>
@@ -116,7 +116,7 @@
         <!-- <div class="divided title">More About You</div> -->
 
         <div class="field">
-          <label>I would describe myself as a...</label>
+          <label>I would describe myself as a... </label>
           <input type="text" placeholder="Student, Medical Researcher, Designer, Hacker Extraordinaire, Front-End/ Back-End Wizard..." ng-model="user.profile.description" class="ng-pristine ng-untouched ng-valid">
         </div>
 
@@ -124,7 +124,7 @@
           <label>
               Can you summarize your interest in health/tech in one sentence?
           </label>
-          <textarea ng-model="user.profile.interest" placeholder="e.g. PhD student in bioinformatics; resident doctor in internal medicine. This helps us create a mix of people from different backgrounds!" class="ng-pristine ng-untouched ng-valid">          </textarea>
+          <textarea ng-model="user.profile.interest" placeholder="e.g. PhD student in bioinformatics; resident doctor in internal medicine. This helps us create a mix of people from different backgrounds!" class="ng-pristine ng-untouched ng-valid"></textarea>
         </div>
 
         <div class="divided title">More About You</div>
@@ -132,28 +132,29 @@
           The following questions help us see which workshops and mentors to invite to the hackathon! It also helps balance Lumohacks in terms of skillsets.
         </p>
 
-        <div class="field">
-          <label> Link to your LinkedIn</label>
-          <input type="url" name="linkedin" ng-model="user.profile.linkedin" class="ng-pristine ng-untouched ng-valid ng-valid-url">
-        </div>
-
-        <!-- <div class="field">
-          <label> Link to your Github</label>
-          <input type="url" name="github" ng-model="user.profile.github" class="ng-pristine ng-untouched ng-valid ng-valid-url">
-        </div> -->
 
         <div class="field">
           <label> Link to your Github</label>
-          <input type="url"
+          <input type="text"
                  name="github"
                  placeholder="https://github.com/foobar"
                  ng-model="user.profile.github">
         </div>
 
-
         <div class="field">
           <label> Link to your Resume/CV</label>
-          <input type="url" name="cv" ng-model="user.profile.cv" class="ng-pristine ng-untouched ng-valid ng-valid-url">
+          <input type="text"
+                 name="github"
+                 placeholder="https://..."
+                 ng-model="user.profile.cv">
+        </div>
+
+        <div class="field">
+          <label> Link to your LinkedIn</label>
+          <input type="text"
+                 name="linkin"
+                 placeholder="https://linkedin.com/foobar"
+                 ng-model="user.profile.linkin">
         </div>
 
         <div class="field">
@@ -204,7 +205,7 @@
         </div>
 
         <div class="field">
-          <label> What's your TShirt Size </label>
+          <label> What's your TShirt Size (required)</label>
           <p>
             Let's get you some swag!
           </p>
@@ -224,30 +225,12 @@
 
         <div class="field">
           <p>After submitting your application, we will send you details within the next week! Please make sure contact@designlablive.com is in your Safe contacts list and check your spam/junk mail!</p>
-          <p>Finally, check the box below if you've read and agree with the <a href="https://docs.google.com/document/d/1AhBHTmhN21j72vy3o4uV32Q4TwMfIwO4_NqnYBZLlws/edit?usp=sharing
-          http://static.mlh.io/docs/mlh-code-of-conduct.pdf"> terms and conditions</a>.</p>
+          <p>Finally, check the box below if you've read and agree with the <a href="https://docs.google.com/document/d/1AhBHTmhN21j72vy3o4uV32Q4TwMfIwO4_NqnYBZLlws/edit?usp=sharing"> terms and conditions</a>.</p>
           <div class="ui checkbox">
             <input type="checkbox" id="adult" ng-model="user.profile.adult">
             <label for="adult">I Agree.</label>
           </div>
       </div>
-
-        <!-- <div class="field"
-             ng-hide="isMitStudent">
-          <p>
-            Because of limitations imposed by MIT, we are not legally allowed to host
-            non-MIT minors (those under 18) for HackMIT 2015. Checking the box below affirms that you are or will be 18 years or older by September 19th, 2015.
-          </p>
-          <p>
-            <strong>
-            We will be checking ID. If you are a non-MIT minor, you will be turned away at the door.
-            </strong>
-          </p>
-          <div class="ui checkbox">
-            <input type="checkbox" id="adult" ng-model="user.profile.adult">
-            <label for="adult">I am 18 or older.</label>
-          </div>
-        </div> -->
 
         <br>
 

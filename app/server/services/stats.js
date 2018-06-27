@@ -19,12 +19,14 @@ function calculateStats(){
       },
       schools: {},
       year: {
-        '2016': 0,
-        '2017': 0,
-        '2018': 0,
-        '2019': 0,
+        '1': 0,
+        '2': 0,
+        '3': 0,
+        '4': 0,
+        '5': 0,
       },
       cschool: {
+        na: 0,
         sfu: 0,
         ubc: 0,
         uv: 0,
@@ -154,9 +156,12 @@ function calculateStats(){
         newStats.demo.schools[email].declined += user.status.declined ? 1 : 0;
 
         // Count graduation years
-        if (user.profile.graduationYear){
-          newStats.demo.year[user.profile.graduationYear] += 1;
+        if (user.profile.year){
+          newStats.demo.year[user.profile.year] += 1;
         }
+        // console.log("!!! FOOBAR !!!");
+        // var a = user.profile;
+        // console.log(a.graduationYear);
 
         // Grab the team name if there is one
         // if (user.teamCode && user.teamCode.length > 0){
@@ -195,6 +200,22 @@ function calculateStats(){
           });
         }
 
+       // // Year of Study
+       //  if (user.profile.graduationYear === '1') {
+       //    newStats.demo.cschool.sfu++;
+       //  } else if (user.profile.Cschool === '2') {
+       //    newStats.demo.cschool.ubc++;
+       //  } else if (user.profile.Cschool === '3') {
+       //    newStats.demo.cschool.uv++;
+       //  } else if (user.profile.Cschool === '4') {
+       //    newStats.demo.cschool.uw++;
+       //  } else if (user.profile.Cschool === '5') {
+       //    newStats.demo.cschool.na++;
+       //  }
+       //  else {
+       //    newStats.demo.cschool.o++;
+       //  }
+
         // University
         if (user.profile.Cschool === 'SFU') {
           newStats.demo.cschool.sfu++;
@@ -204,11 +225,14 @@ function calculateStats(){
           newStats.demo.cschool.uv++;
         } else if (user.profile.Cschool === 'UW') {
           newStats.demo.cschool.uw++;
-        } else {
+        } else if (user.profile.Cschool === 'NA') {
+          newStats.demo.cschool.na++;
+        }
+        else {
           newStats.demo.cschool.o++;
         }
 
-        // Degree
+        // Major
         if (user.profile.major === 'CS') {
           newStats.demo.major.cs++;
         } else if (user.profile.Cschool === 'ENG') {

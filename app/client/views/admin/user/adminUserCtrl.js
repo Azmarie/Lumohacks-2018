@@ -6,6 +6,8 @@ angular.module('reg')
     'UserService',
     function($scope, $http, User, UserService){
       $scope.selectedUser = User.data;
+      $scope.lastUpdatedTimestamp = (new Date($scope.selectedUser.lastUpdated)).toString();
+      $scope.createdTimestamp = (new Date($scope.selectedUser.timestamp)).toString();
 
       // Populate the school dropdown
       populateSchools();
@@ -42,4 +44,8 @@ angular.module('reg')
           });
       };
 
+      $scope.foobar123 = function(user) {
+        console.log('foobar', user);
+        return '123';
+      };
     }]);

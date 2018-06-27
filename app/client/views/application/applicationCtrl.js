@@ -16,13 +16,14 @@ angular.module('reg')
       // Is the student from MIT?
       $scope.isMitStudent = $scope.user.email.split('@')[1] == 'mit.edu';
 
+      jack = $scope;
+
       // If so, default them to adult: true
       if ($scope.isMitStudent){
         $scope.user.profile.adult = true;
       }
 
       // Populate the school dropdown
-    // debugger;
       populateSchools();
       _setupForm();
 
@@ -134,7 +135,7 @@ angular.module('reg')
               identifier: 'phoneNumber',
               rules: [
                 {
-                  // type:'', 
+                  // type:'',
                   // TO-DO: add validation
                   prompt: 'Please enter a valid phone number.'
                 }
@@ -171,7 +172,7 @@ angular.module('reg')
               identifier: 'adult',
               rules: [
                 {
-                  type: 'empty',
+                  type: 'checked',
                   prompt: 'Please read the terms :)'
                 }
               ]

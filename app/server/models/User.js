@@ -25,7 +25,7 @@ var profile = {
     max: 150,
   },
 
-  graduationYear: {
+  year: {
     type: String,
     enum: {
       values: '1 2 3 4 5'.split(' '),
@@ -39,12 +39,6 @@ var profile = {
   },
 
   essay: {
-    type: String,
-    min: 0,
-    max: 1500
-  },
-
-  foobar: {
     type: String,
     min: 0,
     max: 1500
@@ -83,21 +77,20 @@ var profile = {
       values: 'N VGT VE O'.split(' ')
     }
   },
+
   otherdietres:String,
   otherchannel: String,
-
   otherschool: String,
   major: String,
   othermajor: String,
   github: String,
-  LinkedIn: String,
-
+  linkin: String,
   cv: String,
+
   interest: {
     type: String,
     max: 300
   },
-
 
 };
 
