@@ -50,21 +50,6 @@
           </select>
         </div>
 
-        <!-- <div class="field ng-hide" ng-show="autoFilledSchool">
-          <label> School </label>
-          <input class="ui input ng-pristine ng-untouched ng-valid ng-hide" disabled="disabled" ng-show="autoFilledSchool" ng-model="user.profile.school">
-        </div>
-
-        <div class="field" ng-show="!autoFilledSchool">
-          <label> Which school are you from? </label>
-          <div id="school" class="ui search">
-            <div class="ui input">
-              <input class="prompt ng-pristine ng-untouched ng-valid" type="text" placeholder="School" name="school" ng-model="user.profile.school" autocomplete="off">
-            </div>
-            <div class="results"></div>
-          </div>
-        </div> -->
-
         <div class="field">
           <label>Which school are you from (required)</label>
           <select name="school" ng-model="user.profile.Cschool" class="ng-pristine ng-untouched ng-valid">
@@ -168,8 +153,8 @@
 
         <div class="field">
           <label>How did you hear about Lumohacks?</label>
-          <select name="channel" ng-model="user.profile.channel" class="ng-pristine ng-untouched ng-valid"><option value="? undefined:undefined ?"></option>
-            <!-- <option value=""></option> -->
+          <select name="channel" ng-model="user.profile.channel" class="ng-pristine ng-untouched ng-valid">
+            <option value="">Channel</option>
             <option value="FF">Friends/ Family</option>
             <option value="SE">School Email</option>
             <option value="FB">Facebook</option>
@@ -190,8 +175,8 @@
         <div class="field">
           <label>Do you have any dietary restrictions?</label>
           <p>There will be alternatives for people who are Vegetarian. There may be food options provided for other dietary restrictions, but we cannot guarantee this for all meals due to funding limitations, so please be prepared to bring your own food, thanks!</p>
-          <select name="dietres" ng-model="user.profile.dietres" class="ng-pristine ng-untouched ng-valid"><option value="? undefined:undefined ?"></option>
-            <!-- <option value=""></option> -->
+          <select name="dietres" ng-model="user.profile.dietres" class="ng-pristine ng-untouched ng-valid">
+            <option value="">Dietary Restrictions</option>
             <option value="N">No Restrictions</option>
             <option value="VGT">Vegetarian</option>
             <option value="VE">Vegan</option>
