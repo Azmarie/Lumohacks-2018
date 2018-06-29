@@ -57,19 +57,10 @@ function calculateStats(){
     confirmedNone: 0,
 
     shirtSizes: {
-      'XS': 0,
       'S': 0,
       'M': 0,
       'L': 0,
       'XL': 0,
-      'XXL': 0,
-      'WXS': 0,
-      'WS': 0,
-      'WM': 0,
-      'WL': 0,
-      'WXL': 0,
-      'WXXL': 0,
-      'None': 0
     },
 
     dietaryRestrictions: {},
@@ -161,7 +152,9 @@ function calculateStats(){
         }
         // console.log("!!! FOOBAR !!!");
         // var a = user.profile;
-        // console.log(a.graduationYear);
+        // console.log(a);
+        // console.log(a.major);
+
 
         // Grab the team name if there is one
         // if (user.teamCode && user.teamCode.length > 0){
@@ -200,22 +193,6 @@ function calculateStats(){
           });
         }
 
-       // // Year of Study
-       //  if (user.profile.graduationYear === '1') {
-       //    newStats.demo.cschool.sfu++;
-       //  } else if (user.profile.Cschool === '2') {
-       //    newStats.demo.cschool.ubc++;
-       //  } else if (user.profile.Cschool === '3') {
-       //    newStats.demo.cschool.uv++;
-       //  } else if (user.profile.Cschool === '4') {
-       //    newStats.demo.cschool.uw++;
-       //  } else if (user.profile.Cschool === '5') {
-       //    newStats.demo.cschool.na++;
-       //  }
-       //  else {
-       //    newStats.demo.cschool.o++;
-       //  }
-
         // University
         if (user.profile.Cschool === 'SFU') {
           newStats.demo.cschool.sfu++;
@@ -233,15 +210,16 @@ function calculateStats(){
         }
 
         // Major
+
         if (user.profile.major === 'CS') {
           newStats.demo.major.cs++;
-        } else if (user.profile.Cschool === 'ENG') {
+        } else if (user.profile.major === 'ENG') {
           newStats.demo.major.eng++;
-        } else if (user.profile.Cschool === 'DES') {
+        } else if (user.profile.major === 'DES') {
           newStats.demo.major.des++;
-        } else if (user.profile.Cschool === 'HS') {
+        } else if (user.profile.major === 'HS') {
           newStats.demo.major.hs++;
-        } else if (user.profile.Cschool === 'BUS') {
+        } else if (user.profile.major === 'BUS') {
           newStats.demo.major.bus++;
         } else {
           newStats.demo.major.o++;

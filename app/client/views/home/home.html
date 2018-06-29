@@ -26,7 +26,7 @@
     <h3 class="banner__text">September 15th - 16th 2018, Vancouver</h3>
     <!-- <a href="/login" target="_blank" class="banner__btn btn btn--opacity">Apply NOW</a> -->
     <div class="banner__btn" >
-      <a href="/login" target="_blank" class="apply-btn striped-shadow dark">
+      <a href="/login" target="_blank" class="apply-btn striped-shadow dark" style="text-decoration:none;">
         <span>APPLY NOW</span>
       </a>
     </div>
@@ -225,9 +225,8 @@
     </div>
   </div>
 </div>
+-->
 
-
-<!-- Event Partners -->
 <div class="sect blog sect--grey">
   <div class="container">
     <div class="tz-gallery">
@@ -312,7 +311,7 @@
   var header = document.getElementsByTagName('header')[0];
   var body = document.body;
 
-  var node = document.body.children[0];
+  var node = document.body.children["root-view"];
 
   if (!node.classList.contains("container")) {
     node.classList.add("container");

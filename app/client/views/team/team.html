@@ -6,6 +6,7 @@
       <div class="ui segment">
         <div class="ui form" ng-show="!user.teamCode && regIsOpen">
           <div class="field">
+              <p>Team size is 2 - 4 people.</p>
               <p>Instructions for joining and creating teams for Lumohacks will be provided in our Slack channel.</p>
               <p>Stay tuned! More information will be sent to your email.</p>
           </div>
@@ -15,7 +16,7 @@
   </div>
 </div>
 <script>
-  var node = document.body.children[0];
+  var node = document.body.children["root-view"];
   if (!node.classList.contains("container")) {
     node.classList.add("container");
   }
