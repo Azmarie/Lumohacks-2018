@@ -5,3 +5,5 @@ app/client/plugins/
 *.log
 todo
 **/.DS_Store
+node_modules
+npm-debug.log
