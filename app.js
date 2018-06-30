@@ -22,7 +22,7 @@ var app             = express();
 mongoose.connect(database);
 
 app.use(morgan('dev'));
-app.use(sslRedirect());
+// app.use(sslRedirect());
 
 app.use(bodyParser.urlencoded({
   extended: true
