@@ -62,6 +62,12 @@ angular.module('reg')
         });
       };
 
+      $scope.getCSV = function(){
+          debugger;
+        console.log("Requesting server to export users as CSV file");
+        UserService.getCSV();
+      };
+
       $scope.toggleCheckIn = function($event, user, index) {
         $event.stopPropagation();
 
