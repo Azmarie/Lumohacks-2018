@@ -187,6 +187,7 @@ module.exports = function(router) {
       } else {
         users = users.map(function(user) {
           user.name = user.profile.name;
+          user.shirtSize = user.profile.shirtSize;
           user.completedProfile = user.status.completedProfile;
           user.admitted = user.status.admitted;
           user.declined = user.status.declined;
