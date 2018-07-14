@@ -62,8 +62,17 @@ angular.module('reg')
         });
       };
 
+      $scope.getAdmittedCSV = function(){
+        console.log("Requesting server to export admitted users as CSV file");
+        UserService.getAdmittedCSV();
+      };
+
+      $scope.getConfirmedCSV = function(){
+        console.log("Requesting server to export confirmed users as CSV file");
+        UserService.getConfirmedCSV();
+      };
+
       $scope.getCSV = function(){
-          debugger;
         console.log("Requesting server to export users as CSV file");
         UserService.getCSV();
       };

@@ -139,6 +139,8 @@ module.exports = function(router) {
    * [ADMIN ONLY]
    */
   router.get('/users/exportcsv', isAdmin, function(req, res, next){
+
+    var type = req.query.type;
     function timeStamp() {
       // Create a date object with the current time
       var now = new Date();
@@ -171,7 +173,8 @@ module.exports = function(router) {
 
     console.log("Exporting users as CSV: " + timeStamp());
 
-    var filename = "export_quill_users" + timeStamp() + ".csv";
+    var filename = " users " + timeStamp() + ".csv";
+    if (type != "undefined") filename = type + filename;
 
     var dataArray;
 
@@ -179,18 +182,25 @@ module.exports = function(router) {
     var csv      = require('csv-express');
 
     var UserDB = mongoose.model('User');
+    var query = {};
 
-    UserDB.find({}, {email: 1, profile: 1, verified:1, status: 1}).lean().exec({}, function(err, users) {
+    if (type != "undefined") {
+        console.log('inside type'+type);
+        query["status." + type] = true;
+    }
+
+    UserDB.find(query, {email: 1, profile: 1, verified:1, status: 1}).lean().exec({}, function(err, users) {
       if (err){
         res.send(err);
         console.log(err);
       } else {
         users = users.map(function(user) {
           user.name = user.profile.name;
-          user.shirtSize = user.profile.shirtSize;
-          user.completedProfile = user.status.completedProfile;
+          // user.shirtSize = user.profile.shirtSize;
+          // user.completedProfile = user.status.completedProfile;
           user.admitted = user.status.admitted;
-          user.declined = user.status.declined;
+          user.confirmed = user.status.confirmed;
+          // user.declined = user.status.declined;
           delete user.profile;
           delete user.status;
           delete user._id;
