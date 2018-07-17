@@ -81,74 +81,6 @@ p{
 .row--margin{
   margin-top: 65px;
 }
-/*--------------------------------
-ANIOMATION
----------------------------------*/
-/* @-webkit-keyframes banner-in {
-0% {
-background-color:rgba(0,0,0,1);
-}
-100% {
-background-color:rgba(0,0,0,0.5);
-}
-}
-@-moz-keyframes banner-in {
-0% {
-background-color:rgba(0,0,0,1);
-}
-100% {
-background-color:rgba(0,0,0,0.5);
-}
-}
-@-o-keyframes banner-in {
-0% {
-background-color:rgba(0,0,0,1);
-}
-100% {
-background-color:rgba(0,0,0,0.5);
-}
-}
-@keyframes banner-in {
-0% {
-background-color:rgba(0,0,0,1);
-}
-100% {
-background-color:rgba(0,0,0,0.5);
-}
-}
-
-@-webkit-keyframes opacity {
-0% {
-opacity:0;
-}
-100% {
-opacity:1;
-}
-}
-@-moz-keyframes opacity {
-0% {
-opacity:0;
-}
-100% {
-opacity:1;
-}
-}
-@-o-keyframes opacity {
-0% {
-opacity:0;
-}
-100% {
-opacity:1;
-}
-}
-@keyframes opacity {
-0% {
-opacity:0;
-}
-100% {
-opacity:1;
-}
-} */
 
 /*--------------------------------
 HEADER
@@ -294,7 +226,9 @@ vertical-align: middle;
   position: absolute;
   bottom: 30%;
   left: 34%;
-  right: 36%;}
+  right: 36%;
+}
+
 /*--------------------------------
 APPLICATION BUTTON
 ---------------------------------*/
@@ -516,11 +450,10 @@ THE BEST COFFEE SHOP
 .best__title {
   letter-spacing: 1px;
   font-size: 18px;
-  /* text-transform: uppercase; */
   font-weight: 500;
   margin-top: 45px;
   margin-bottom: 20px;
-  color: #3fa08d;
+  color: $green-homepage;
 }
 
 .best__img {
@@ -597,6 +530,70 @@ BLOG IMAGES
   margin: 0;
   line-height: 22px;
 }
+
+/*--------------------------------
+Schedule
+// ---------------------------------*/
+.Schedule {
+  padding-left:80px;
+  padding-right:80px;
+}
+.schedule-card-day {
+    display: inline-block;
+    color: #888888;
+      text-decoration: none;
+      border: 0;
+      border-radius: .1em;
+      border-bottom: 4px solid;
+      border-image: linear-gradient(to left, #6adacf, #3b2323);
+      border-image-slice: 1;
+      transition: .2s all ease-in-out;
+      padding: .25em .5em;
+      &:hover{
+        text-shadow: .05em .05em .05em rgba(0,0,0,0.4);
+      }
+ }
+
+.schedule-card-day-2 {
+    display: inline-block;
+    color: #888888;
+      text-decoration: none;
+      border: 0;
+      border-radius: .1em;
+      border-bottom: 4px solid;
+      border-image: linear-gradient(to right, #6adacf, #3b2323);
+      border-image-slice: 1;
+      transition: .2s all ease-in-out;
+      padding: .25em .5em;
+      &:hover {
+        text-shadow: .05em .05em .05em rgba(0,0,0,0.4);
+      }
+ }
+
+.schedule-card-divider {
+    height: 5px;
+    background-image: linear-gradient(to left, #43cea2, #185a9d);
+    width: 80%;
+    margin: auto;
+}
+
+.schedule-card-table {
+  line-height: 2em;
+    text-align: left;
+    margin: auto;
+    // font-size: 16px;
+    margin-top: 10px;
+}
+
+.schedule-card-table > tbody > tr > td.schedule-event-time {
+    padding: 5px;
+    font-weight: 800;
+}
+
+.schedule-card-table > tbody > tr > td.schedule-event-info {
+    padding: 5px;
+}
+
 
 /*--------------------------------
 JUDGIN
@@ -988,22 +985,6 @@ RESPONSIVE
 
 }
 
-/* footer */
-// @media (min-width: 1200px) {
-//   .container {
-//     width: 1170px;
-//   }
-// }
-// @media (min-width: 992px) {
-//   .container {
-//     width: 970px;
-//   }
-// }
-// @media (min-width: 768px) {
-//   .container {
-//     width: 750px;
-//   }
-// }
 .footercontainer {
   margin-right: auto;
   margin-left: auto;
@@ -1064,19 +1045,36 @@ li {
   color: #a3ccb7;
 }
 
-/* 2017 sponsors */
-.tz-gallery {
-  margin: 20px 20px 30px 30px;
-  /* display: inline-block */
+/* sponsors */
+.sponsor-gallery a{
+  display:inline-block
+}
+.sponsor-gallery img {
+  width:300px;
+  padding:50px;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+.gold img{
+  width:350px;
+}
+.sponsor-gallery img:hover {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);}
+
+.equal {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
 }
 
-.tz-gallery img {
-  width: 180px;
-  margin-bottom: 30px;
-  transition: 0.2s ease-in-out;
+.best__title__sponsor {
+  text-align:center;
+  letter-spacing: 1px;
+  font-size: 21px;
+  font-weight: 500;
+  color: $green-homepage;  
 }
 
-.tz-gallery img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3)
-}
