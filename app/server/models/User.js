@@ -225,6 +225,16 @@ var schema = new mongoose.Schema({
     default: Date.now(),
   },
 
+  adminLastExportAccepted: {
+    type: Number,
+    default: 0,
+  },
+
+  adminLastExportConfirmed: {
+    type: Number,
+    default: 0,
+  },
+
   teamCode: {
     type: String,
     min: 0,

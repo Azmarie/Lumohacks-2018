@@ -75,10 +75,12 @@ angular.module('reg')
         return $http.get(base + 'stats');
       },
 
-      getCSV: function(type){
+      getCSV: function(type, adminID){
         console.log('getCSV');
         console.log(type);
-        return $http.get(base + 'exportcsv?type=' + type).success(function (data, status, headers) {
+        adminID = Session.getUserId();
+        console.log(adminID);
+        return $http.get(base + 'exportcsv?type=' + type + '&adminID=' + adminID).success(function (data, status, headers) {
         headers = headers();
         var filename = headers['x-filename'];
         var contentType = headers['content-type'];
@@ -104,7 +106,7 @@ angular.module('reg')
       },
 
       getAdmittedCSV: function(){
-        // console.log("getAdmittedCSV");
+        console.log("getAdmittedCSV");
         this.getCSV("admitted");
       },
 

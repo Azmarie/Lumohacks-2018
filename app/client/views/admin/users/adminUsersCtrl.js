@@ -1,10 +1,14 @@
 angular.module('reg')
   .controller('AdminUsersCtrl',[
     '$scope',
+    '$rootScope',
     '$state',
     '$stateParams',
     'UserService',
-    function($scope, $state, $stateParams, UserService){
+
+    function($scope, $rootScope, $state, $stateParams, UserService){
+
+      console.log($rootScope.currentUser.email);
 
       $scope.pages = [];
       $scope.users = [];
@@ -64,7 +68,8 @@ angular.module('reg')
 
       $scope.getAdmittedCSV = function(){
         console.log("Requesting server to export admitted users as CSV file");
-        UserService.getAdmittedCSV();
+        // console.log($rootScope.currentUser.email);
+        UserService.getAdmittedCSV("admitted");
       };
 
       $scope.getConfirmedCSV = function(){

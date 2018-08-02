@@ -56,7 +56,7 @@ angular.module('reg')
       // Registration Times -----------------------------
 
       $scope.formatDate = function(date){
-          debugger;
+          // debugger;
         if (!date){
           return "Invalid Date";
         }

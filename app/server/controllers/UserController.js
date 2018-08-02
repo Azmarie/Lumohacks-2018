@@ -639,6 +639,7 @@ UserController.admitUser = function(id, user, callback){
         verified: true
       },{
         $set: {
+          'lastUpdated': Date.now(),
           'status.admitted': true,
           'status.admittedBy': user.email,
           'status.confirmBy': times.timeConfirm

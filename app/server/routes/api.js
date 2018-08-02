@@ -141,79 +141,95 @@ module.exports = function(router) {
   router.get('/users/exportcsv', isAdmin, function(req, res, next){
 
     var type = req.query.type;
-    function timeStamp() {
-      // Create a date object with the current time
-      var now = new Date();
+    var adminID = req.query.adminID;
 
-      // Create an array with the current month, day and time
-      var date = [ now.getMonth() + 1, now.getDate(), now.getFullYear() ];
+    console.log("api.js " + type + " " + adminID);
 
-       // Create an array with the current hour, minute and second
-      var time = [ now.getHours(), now.getMinutes(), now.getSeconds() ];
+    // function timeStamp() {
+    //   var now = new Date();
+    //   var date = [ now.getMonth() + 1, now.getDate(), now.getFullYear() ];
+    //   var time = [ now.getHours(), now.getMinutes(), now.getSeconds() ];
+    //   var suffix = ( time[0] < 12 ) ? "AM" : "PM";
+    //   time[0] = ( time[0] < 12 ) ? time[0] : time[0] - 12;
+    //   time[0] = time[0] || 12;
+    //   for ( var i = 1; i < 3; i++ ) {
+    //     if ( time[i] < 10 ) {
+    //       time[i] = "0" + time[i];
+    //     }
+    //   }
+    //   return date.join("-") + "_" + time.join("-") + "_" + suffix;
+    // }
+    // console.log("Exporting users as CSV: " + timeStamp());
 
-      // Determine AM or PM suffix based on the hour
-      var suffix = ( time[0] < 12 ) ? "AM" : "PM";
 
-      // Convert hour from military time
-      time[0] = ( time[0] < 12 ) ? time[0] : time[0] - 12;
 
-      // If hour is 0, set it to 12
-      time[0] = time[0] || 12;
-
-      // If seconds and minutes are less than 10, add a zero
-      for ( var i = 1; i < 3; i++ ) {
-        if ( time[i] < 10 ) {
-          time[i] = "0" + time[i];
-        }
-      }
-
-      // Return the formatted string
-      return date.join("-") + "_" + time.join("-") + "_" + suffix;
-    }
-
-    console.log("Exporting users as CSV: " + timeStamp());
-
-    var filename = " users " + timeStamp() + ".csv";
+    var filename = " users" + ".csv";
     if (type != "undefined") filename = type + filename;
 
     var dataArray;
-
     var mongoose = require('mongoose');
     var csv      = require('csv-express');
 
     var UserDB = mongoose.model('User');
     var query = {};
+    var queryAdmin = {};
+    var lastAdminLastExportAccepted;
 
-    if (type != "undefined") {
-        console.log('inside type'+type);
-        query["status." + type] = true;
+    function getMeow(lastAdminLastExportAccepted) {
+      UserDB.find(query, {email: 1, profile: 1, verified:1, status: 1, lastUpdated:1}).lean().exec({}, function(err, users) {
+        if (err){
+          res.send(err);
+          console.log(err);
+        } else {
+          users = users.map(function(user) {
+            console.log("user last updated time is " + user.lastUpdated);
+            user.name = user.profile.name;
+            user.admitted = user.status.admitted;
+            user.confirmed = user.status.confirmed;
+            delete user.profile;
+            delete user.status;
+            delete user._id;
+            return user;
+          });
+          res.statusCode = 200;
+
+          res.setHeader('Content-Type', 'text/csv');
+          res.setHeader("x-filename", filename);
+          res.status(200).csv(users, true);
+        }
+      });
     }
 
-    UserDB.find(query, {email: 1, profile: 1, verified:1, status: 1}).lean().exec({}, function(err, users) {
-      if (err){
-        res.send(err);
-        console.log(err);
-      } else {
-        users = users.map(function(user) {
-          user.name = user.profile.name;
-          // user.shirtSize = user.profile.shirtSize;
-          // user.completedProfile = user.status.completedProfile;
-          user.admitted = user.status.admitted;
-          user.confirmed = user.status.confirmed;
-          // user.declined = user.status.declined;
-          delete user.profile;
-          delete user.status;
-          delete user._id;
-          return user;
-        });
-        res.statusCode = 200;
+    if (type != "undefined") {
+        query["status." + type] = true;
+        queryAdmin["_id"] = adminID;
+    }
 
-        res.setHeader('Content-Type', 'text/csv');
-        res.setHeader("x-filename", filename);
-        res.status(200).csv(users, true);
+
+    UserDB.findOne(queryAdmin, 'adminLastExportAccepted', function (err, admin) {
+      if (err) 
+        return handleError(err);
+      else {
+        lastAdminLastExportAccepted = admin.adminLastExportAccepted;
+
+        if (type == "admitted") {
+          // console.log(type + " " + adminID);
+          admin.adminLastExportAccepted = Date.now();
+          admin.save();
+          query["lastUpdated"] = {$gt: lastAdminLastExportAccepted};
+          query["status.confirmed"] = false;
+        }
+
+        // if (type === "confirmed") {
+        //   admin.adminLastExportConfirmed = Date.now();
+        //   admin.save()
+        //   query["lastUpdated"] = {$gt: lastAdminLastExportConfirmed};
+        // }
+        // console.log('%d %d', admin.adminLastExportAccepted, admin.adminLastExportConfirmed);
+
+        getMeow(lastAdminLastExportAccepted);
       }
     });
-
   });
 
   /**
