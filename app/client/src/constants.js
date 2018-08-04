@@ -3,11 +3,11 @@ angular.module('reg')
         NAME: 'Lumohacks 2018',
     })
     .constant('DASHBOARD', {
-        UNVERIFIED: 'You should have received an email asking you verify your email. Click the link in the email and you can start your application!',
+        UNVERIFIED: 'You should have received an email asking you verify your email. \nClick the link in the email and you can start your application -- we want to know about what you\'re interested in and what your expertise is in, so that we can create an event with diverse people! Please submit your application as soon as possible because acceptances are sent on a rolling basis!',
         INCOMPLETE_TITLE: 'You still need to complete your application!',
-        INCOMPLETE: ' Seats are filling fast! If you haven\'t already, submit your application as soon as possible to secure a spot. Please be sure to check your spam and junk folders if you don’t hear from us in a month, and add contact@designlablive.com to your safe list.',
+        INCOMPLETE: ' Write your application -- we want to know about what you\'re interested in and what your expertise is in, so that we can create an event with diverse people! Please submit your application as soon as possible because acceptances are sent on a rolling basis. Seats are filling fast! Please be sure to check your spam and junk folders if you don’t hear from us in a month, and add contact@designlablive.com to your safe list.',
         SUBMITTED_TITLE: 'Acceptances are sent on a rolling basis, so please confirm your attendance as soon as possible to secure your seat, or else it may be passed to someone else. Please be sure to check your spam and junk folders if you don’t hear from us in a month, and add contact@designlablive.com to your safe list.',
-        SUBMITTED: 'Feel free to edit it at any time. However, once registration is closed, you will not be able to edit it any further.\nAdmissions will be competitive, please provide us with enough information to showcase your skillset before registration is closed!',
+        SUBMITTED: 'Feel free to edit it at anytime. However, once registration is closed, you will not be able to edit it any further.\nAdmissions will be competitive, please provide us with enough information to showcase your skillset before registration is closed!',
         CLOSED_AND_INCOMPLETE_TITLE: 'Unfortunately, registration has closed, and the lottery process has begun.',
         CLOSED_AND_INCOMPLETE: 'Because you have not completed your profile in time, you will not be eligible for the lottery process.',
         ADMITTED_AND_CAN_CONFIRM_TITLE: 'Please make sure to confirm within a week of acceptance to secure your seat, or else it may be passed to someone else. Check your spam and junk folders if you don’t hear from us in a month, and add contact@designlablive.com to your safe list.',
