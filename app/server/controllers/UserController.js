@@ -642,6 +642,7 @@ UserController.admitUser = function(id, user, callback){
           'lastUpdated': Date.now(),
           'status.admitted': true,
           'status.admittedBy': user.email,
+          'status.admittedAt': Date.now(),
           'status.confirmBy': times.timeConfirm
         }
       }, {

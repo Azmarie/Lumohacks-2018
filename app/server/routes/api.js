@@ -176,13 +176,13 @@ module.exports = function(router) {
     var lastAdminLastExportAccepted;
 
     function getMeow(lastAdminLastExportAccepted) {
-      UserDB.find(query, {email: 1, profile: 1, verified:1, status: 1, lastUpdated:1}).lean().exec({}, function(err, users) {
+      UserDB.find(query, {email: 1, profile: 1, verified:1, status: 1}).lean().exec({}, function(err, users) {
         if (err){
           res.send(err);
           console.log(err);
         } else {
           users = users.map(function(user) {
-            console.log("user last updated time is " + user.lastUpdated);
+            console.log("user was admitted at " + user.status.admittedAt);
             user.name = user.profile.name;
             user.admitted = user.status.admitted;
             user.confirmed = user.status.confirmed;
@@ -216,14 +216,14 @@ module.exports = function(router) {
           // console.log(type + " " + adminID);
           admin.adminLastExportAccepted = Date.now();
           admin.save();
-          query["lastUpdated"] = {$gt: lastAdminLastExportAccepted};
+          query["status.admittedAt"] = {$gt: lastAdminLastExportAccepted};
           query["status.confirmed"] = false;
         }
 
         // if (type === "confirmed") {
         //   admin.adminLastExportConfirmed = Date.now();
         //   admin.save()
-        //   query["lastUpdated"] = {$gt: lastAdminLastExportConfirmed};
+        //   query["status.admittedAt"] = {$gt: lastAdminLastExportConfirmed};
         // }
         // console.log('%d %d', admin.adminLastExportAccepted, admin.adminLastExportConfirmed);
 

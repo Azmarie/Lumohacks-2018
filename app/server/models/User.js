@@ -180,6 +180,10 @@ var status = {
   checkInTime: {
     type: Number,
   },
+  admittedAt: {
+    type: Number,
+    default: 0
+  },
   confirmBy: {
     type: Number
   },
