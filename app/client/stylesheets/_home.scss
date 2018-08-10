@@ -69,6 +69,16 @@ p{
   display: inline-block;
   float: none;
 }
+
+// .row{
+//     overflow: hidden; 
+// }
+
+// [class*="col-"]{
+//     margin-bottom: -99999px;
+//     padding-bottom: 99999px;
+// }
+
 .row--center{
   text-align: center;
 
@@ -800,6 +810,12 @@ RESPONSIVE
   }
   .row--margin {
     margin-top: 30px;
+    :nth-child(2){
+      margin-top: 30px;
+    }
+    :nth-child(3){
+      margin-top: 30px;
+    }
   }
   .coffee{
     margin-bottom:30px;
@@ -963,6 +979,12 @@ RESPONSIVE
   }
   .row--margin {
     margin-top: 15px;
+    :nth-child(2){
+      margin-top: 15px;
+    }
+    :nth-child(3){
+      margin-top: 15px;
+    }
   }
   .best__img {
     width: 44px;
