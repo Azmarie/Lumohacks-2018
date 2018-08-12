@@ -34,6 +34,7 @@ var options = {
   }
 };
 
+console.log(options);
 var transporter = nodemailer.createTransport(smtpTransport(options));
 
 var controller = {};
