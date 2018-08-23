@@ -7,10 +7,46 @@ angular.module('reg')
     'Session',
     function($http, $rootScope, $state, $window, Session) {
       var authService = {};
+      var userCount = {};
+
+      function startLoginTimer(data, cb) {
+        return window.setTimeout(function() {
+          if (!Session.isLoggedOut(data.user)) {
+            sweetAlert({
+              title: "Session expire soon",
+              text: "You are about to be logged out in 10 minutes, save your application!",
+              type: "warning",
+              confirmButtonColor: "#00c3b5",
+              confirmButtonText: "I need more time",
+              showCancelButton: true,
+            }, cb);
+          }
+        }, 1200000);
+      }
+
+      function startLogoutTimer(data) {
+        return window.setTimeout(function(){
+          if (!Session.isLoggedOut(data.user)) {
+            authService.logout();
+          }
+        }, 1800000);
+      }
 
       function loginSuccess(data, cb){
-        // Winner winner you get a token
         Session.create(data.token, data.user);
+        userCount[data.user] = {};
+
+        var handleRedirect = function() {
+
+          clearTimeout(userCount[data.user].loginCount);
+          clearTimeout(userCount[data.user].logoutCount);
+
+          userCount[data.user].loginCount = startLoginTimer(data, handleRedirect);
+          userCount[data.user].logoutCount = startLogoutTimer(data);
+        };
+
+        userCount[data.user].loginCount = startLoginTimer(data, handleRedirect);
+        userCount[data.user].logoutCount = startLogoutTimer(data);
 
         if (cb){
           cb(data.user);

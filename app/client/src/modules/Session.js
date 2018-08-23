@@ -3,18 +3,29 @@ angular.module('reg')
     '$rootScope',
     '$window',
     function($rootScope, $window){
+    
+    var loggedOut = {}
+
+    this.isLoggedOut = function(user) {
+      return !!loggedOut[user];
+    }
 
     this.create = function(token, user){
       $window.localStorage.jwt = token;
       $window.localStorage.userId = user._id;
       $window.localStorage.currentUser = JSON.stringify(user);
       $rootScope.currentUser = user;
+
+      loggedOut[user] = false;
     };
 
     this.destroy = function(onComplete){
+      loggedOut[$window.localStorage.currentUser] = true;
+
       delete $window.localStorage.jwt;
       delete $window.localStorage.userId;
       delete $window.localStorage.currentUser;
+
       $rootScope.currentUser = null;
       if (onComplete){
         onComplete();
