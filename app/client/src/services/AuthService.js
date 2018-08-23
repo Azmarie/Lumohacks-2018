@@ -21,7 +21,7 @@ angular.module('reg')
               showCancelButton: true,
             }, cb);
           }
-        }, 1200000);
+        }, 1800000);
       }
 
       function startLogoutTimer(data) {
@@ -29,7 +29,7 @@ angular.module('reg')
           if (!Session.isLoggedOut(data.user)) {
             authService.logout();
           }
-        }, 1800000);
+        }, 2400000);
       }
 
       function loginSuccess(data, cb){
