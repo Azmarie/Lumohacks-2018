@@ -141,9 +141,10 @@ module.exports = function(router) {
   router.get('/users/exportcsv', isAdmin, function(req, res, next){
 
     var type = req.query.type;
+    var partial = req.query.partial;
     var adminID = req.query.adminID;
 
-    console.log("api.js " + type + " " + adminID);
+    // console.log("api.js " + type + " " + adminID);
 
     // function timeStamp() {
     //   var now = new Date();
@@ -182,7 +183,7 @@ module.exports = function(router) {
           console.log(err);
         } else {
           users = users.map(function(user) {
-            console.log("user was admitted at " + user.status.admittedAt);
+            // console.log("user was admitted at " + user.status.admittedAt);
             user.name = user.profile.name;
             user.admitted = user.status.admitted;
             user.confirmed = user.status.confirmed;
@@ -212,20 +213,13 @@ module.exports = function(router) {
       else {
         lastAdminLastExportAccepted = admin.adminLastExportAccepted;
 
-        if (type == "admitted") {
+        if (type == "admitted" && partial) {
           // console.log(type + " " + adminID);
           admin.adminLastExportAccepted = Date.now();
           admin.save();
           query["status.admittedAt"] = {$gt: lastAdminLastExportAccepted};
           query["status.confirmed"] = false;
         }
-
-        // if (type === "confirmed") {
-        //   admin.adminLastExportConfirmed = Date.now();
-        //   admin.save()
-        //   query["status.admittedAt"] = {$gt: lastAdminLastExportConfirmed};
-        // }
-        // console.log('%d %d', admin.adminLastExportAccepted, admin.adminLastExportConfirmed);
 
         getMeow(lastAdminLastExportAccepted);
       }

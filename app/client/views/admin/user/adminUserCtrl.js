@@ -44,8 +44,4 @@ angular.module('reg')
           });
       };
 
-      // $scope.foobar123 = function(user) {
-      //   console.log('foobar', user);
-      //   return '123';
-      // };
     }]);

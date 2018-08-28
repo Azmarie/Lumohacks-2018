@@ -75,8 +75,8 @@ angular.module('reg')
         return $http.get(base + 'stats');
       },
 
-      getCSV: function(type, adminID){
-        console.log('getCSV');
+      getCSV: function(type, partial, adminID){
+        // console.log('getCSV');
         console.log(type);
         adminID = Session.getUserId();
         console.log(adminID);
@@ -105,13 +105,18 @@ angular.module('reg')
         });
       },
 
-      getAdmittedCSV: function(){
+      getAllAdmittedCSV: function(){
         console.log("getAdmittedCSV");
         this.getCSV("admitted");
       },
 
+      getAdmittedCSV: function(){
+        console.log("getAdmittedCSV");
+        this.getCSV("admitted", true);
+      },
+
       getConfirmedCSV: function(){
-        // console.log("getConfirmedCSV");
+        console.log("getConfirmedCSV");
         this.getCSV("confirmed");
       },
 
