@@ -62,6 +62,18 @@ angular.module('reg')
           }
         }
       })
+      .state('resources', {
+        url: "/resources",
+        templateUrl: "views/resources/resources.html",
+        data: {
+          requireLogin: false
+        },
+        resolve: {
+          'settings': function(SettingsService){
+            return SettingsService.getPublicSettings();
+          }
+        }
+      })
       .state('about', {
         url: "/about",
         templateUrl: "views/about/about.html",

@@ -1,5 +1,5 @@
 @import 'branding';
-@import 'custom';
+// @import 'custom';
 $font-body: 'Lato', 'Helvetica Neue', 'Helvetica', sans-serif;
 $font-header: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif;
 
@@ -52,6 +52,7 @@ $brand-tertiary: $tertiary;
 @import 'admin';
 @import 'home';
 @import '404';
+@import 'resources';
 
 html,
 body {

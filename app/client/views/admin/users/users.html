@@ -15,11 +15,8 @@
               <i class="search icon"></i>
           </div>
         </div>
-
       </div>
-
       <div class="ui divider"></div>
-
       <button
         ng-repeat="page in pages"
         ng-class="page == currentPage ? 'active pink' : ''"
@@ -27,17 +24,11 @@
         class="ui icon basic page button">
         {{page}}
       </button>
-
     <br />
-    
     <button type="button" style="margin-top: 20px; width:180px;" ng-click="getAdmittedCSV()" class="ui yellow button">Export Accepted Users</button>
-
     <button type="button" style="margin-top: 20px; width:180px;" ng-click="getAllAdmittedCSV()" class="ui pink button">Export All Accepted Users</button>
-
     <button type="button" style="margin-top: 20px; width:180px;" ng-click="getConfirmedCSV()" class="ui green button">Export Confirmed Users</button>
-
     <button type="button" style="margin-top: 20px; width:180px;" ng-click="getCSV('')" class="ui teal button">Export All Users</button>
-
 
     </div>
     <div id="table-container" class="thirteen wide column">
@@ -107,8 +98,6 @@
             <th>School</th>
             <th>Grad</th>
             <th>V/S/A/C</th>
-<!--             <th>Host</th>
-            <th>$</th> -->
             <th></th>
             <th></th>
           </tr>
@@ -181,44 +170,7 @@
                 ng-if="user.status.admitted && user.status.declined"
                 class="red remove circle icon">
               </i>
-
             </td>
-
-            <!-- Host -->
-<!--             <td
-              class="collapsing">
-
-              <span ng-if="user.status.confirmed">
-                <i
-                  ng-if="user.confirmation.hostNeededFri"
-                  class="home icon">
-                </i>
-                <i
-                  ng-if="!user.confirmation.hostNeededFri && user.confirmation.hostNeededSat"
-                  class="no icon">
-                </i>
-                <i
-                  ng-if="user.confirmation.hostNeededSat"
-                  class="home icon">
-                </i>
-              </span>
-
-            </td> -->
-
-<!--             <td
-              class="collapsing">
-              <span ng-if="user.status.confirmed">
-                <i
-                  ng-if="user.confirmation.needsReimbursement && !user.status.reimbursementGiven"
-                  class="red money icon">
-                </i>
-                <i
-                  ng-if="user.confirmation.needsReimbursement && user.status.reimbursementGiven"
-                  class="green money icon">
-                </i>
-              </span>
-            </td> -->
-
             <td
               class="collapsing">
               <button
@@ -248,9 +200,7 @@
                 <i
                   ng-if="user.status.checkedIn"
                   class="green flag icon"></i>
-
               </button>
-
             </td>
           </tr>
         </tbody>
