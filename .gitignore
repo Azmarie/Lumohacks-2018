@@ -2,6 +2,7 @@ db/
 node_modules/
 app/client/build/
 app/client/plugins/
+.env
 *.log
 todo
 **/.DS_Store
