@@ -1,20 +1,14 @@
 # Lumohacks 2018 Website
 
-Organizing a Hackathon can be stressful - 
+In an effort to provide a better hackathon experience and cleaner applicants management solution for the organizing team at the Design Lab, I adapted an open-source hackathon registration web app by forking the project by HackMIT (Thank you ♥). More details about [Quil](https://github.com/techx/quill) can be found below. 
 
-In an effort to provide a better hackathon experience and cleaner applicants management solution for the organizing team at the Design Lab, I adapted an open-source hackathon registration web app by forking the project by HackMIT (Thank you ♥). More details about Quil(https://github.com/techx/quill) can be found below. 
-
-I implemented some features, improvements, and customizations for Lumohacks 2018. This project is hosted on Heroku, check the live demo here: http://lumohacks.herokuapp.com/
+I implemented customized features, improvements, and customizations for Lumohacks 2018. This project is hosted on Heroku, check the live demo [here](http://lumohacks.com/)
 
 
 # Landing Page
 
 ## Home
-![Home](http://g.recordit.co/zGoeSQXhDj.gif)
-## Judging
-## Get Involved
-## Resources
-## About Us
+![Home](./docs/images/screenshots/home.png)
 ## 404
 ![404](./docs/images/screenshots/404.png)
 
