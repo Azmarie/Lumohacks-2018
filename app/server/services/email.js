@@ -18,6 +18,7 @@ var EMAIL_PASS = process.env.EMAIL_PASS;
 var EMAIL_PORT = process.env.EMAIL_PORT;
 var EMAIL_CONTACT = process.env.EMAIL_CONTACT;
 var EMAIL_HEADER_IMAGE = process.env.EMAIL_HEADER_IMAGE;
+
 if(EMAIL_HEADER_IMAGE.indexOf("https") == -1){
   EMAIL_HEADER_IMAGE = ROOT_URL + EMAIL_HEADER_IMAGE;
 }
@@ -48,7 +49,7 @@ function sendOne(templateName, options, data, callback){
     console.log(JSON.stringify(data, "", 2));
   }
 
-  emailTemplates(templatesDir, function(err, template){
+  new emailTemplates(templatesDir, function(err, template){
     if (err) {
       return callback(err);
     }

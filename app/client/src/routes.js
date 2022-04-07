@@ -13,19 +13,19 @@ angular.module('reg')
 
     // Set up de states
     $stateProvider
-      .state('login', {
-        url: "/login",
-        templateUrl: "views/login/login.html",
-        controller: 'LoginCtrl',
-        data: {
-          requireLogin: false
-        },
-        resolve: {
-          'settings': function(SettingsService){
-            return SettingsService.getPublicSettings();
-          }
-        }
-      })
+      // .state('login', {
+      //   url: "/login",
+      //   templateUrl: "views/login/login.html",
+      //   controller: 'LoginCtrl',
+      //   data: {
+      //     requireLogin: false
+      //   },
+      //   resolve: {
+      //     'settings': function(SettingsService){
+      //       return SettingsService.getPublicSettings();
+      //     }
+      //   }
+      // })
       .state('home', {
         url: "/",
         templateUrl: "views/home/home.html",

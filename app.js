@@ -1,5 +1,5 @@
 // Load the dotfiles.
-require('dotenv').load({silent: true});
+require('dotenv').config({path: ".env.config", silent: true});
 
 var sslRedirect     = require('heroku-ssl-redirect');
 var express         = require('express');
