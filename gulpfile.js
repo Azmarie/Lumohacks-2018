@@ -1,7 +1,7 @@
-require('dotenv').load({silent: true});
+require('dotenv').config({path: ".env.config", silent: true});
 
 var gulp = require('gulp');
-var sass = require('gulp-sass');
+var sass = require('gulp-sass')(require('node-sass'))
 var minifyCss = require('gulp-minify-css');
 var concat = require('gulp-concat');
 var sourcemaps = require('gulp-sourcemaps');
@@ -22,7 +22,7 @@ gulp.task('default', function(){
   console.log('yo. use gulp watch or something');
 });
 
-gulp.task('js', function () {
+gulp.task('js', async function () {
   if (environment !== 'dev'){
     // Minify for non-development
     gulp.src(['app/client/src/**/*.js', 'app/client/views/**/*.js'])
@@ -44,7 +44,7 @@ gulp.task('js', function () {
 
 });
 
-gulp.task('sass', function () {
+gulp.task('sass', async function () {
   gulp.src('app/client/stylesheets/site.scss')
     .pipe(sass())
       .on('error', sass.logError)
@@ -52,11 +52,11 @@ gulp.task('sass', function () {
     .pipe(gulp.dest('app/client/build'));
 });
 
-gulp.task('build', ['js', 'sass'], function(){
+gulp.task('build', gulp.series('js', 'sass'), async function(){
   // Yup, build the js and sass.
 });
 
-gulp.task('watch', ['js', 'sass'], function () {
+gulp.task('watch', gulp.series('js', 'sass'), function () {
   gulp
     .watch('app/client/src/**/*.js', ['js']);
   gulp
@@ -65,7 +65,7 @@ gulp.task('watch', ['js', 'sass'], function () {
     .watch('app/client/stylesheets/**/*.scss', ['sass']);
 });
 
-gulp.task('server', ['watch'], function(){
+gulp.task('server',  gulp.series('watch'), function(){
   nodemon({
     script: 'app.js',
     env: { 'NODE_ENV': process.env.NODE_ENV || 'DEV' },
