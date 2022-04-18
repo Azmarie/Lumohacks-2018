@@ -9,7 +9,6 @@ var bodyParser      = require('body-parser');
 var methodOverride  = require('method-override');
 var morgan          = require('morgan');
 
-var mongoose        = require('mongoose');
 var port            = process.env.PORT || 3000;
 var database        = process.env.DATABASE || process.env.MONGODB_URI || "mongodb://localhost:27017";
 
@@ -19,7 +18,10 @@ var database        = process.env.DATABASE || process.env.MONGODB_URI || "mongod
 var app             = express();
 
 // Connect to mongodb
-mongoose.connect(database);
+if (process.env.DATABASE_SUPPORT_ENABLED == "true") {
+  var mongoose        = require('mongoose');
+  mongoose.connect(database);
+}
 
 app.use(morgan('dev'));
 // app.use(sslRedirect());
